@@ -14,7 +14,7 @@ This project was developed using a modern **AI-assisted workflow**.
 
 ## 🎨 Design System (Figma)
 The visual identity was established in Figma before coding to ensure a "Design-First" approach.
-- **Figma Design File:**  https://www.figma.com/design/C2lwxniNNwmbqshN09RsWd/Untitled?node-id=8-8731&t=Fk0qaa4ytEgF0JnD-1
+- **Figma Design File:**  https://www.figma.com/design/C2lwxniNNwmbqshN09RsWd/Untitled?node-id=0-1&t=Fk0qaa4ytEgF0JnD-1
 - **Palette:** Beige (#FAF9F7), Turquoise (#0D9488), Dark Blue(#1A1A2E) and Accent Red (#B91C1C).
 - **Typography:** Inter & Poppins (Google Fonts).
 
