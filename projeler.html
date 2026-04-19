@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü akademik ve öğÖğÖğrenci projeleri — TÜBİTAK destekli araştırmalar ve bitirme projeleri." />
+  <title>Projeler — Yazılım Mühendisliği | Samsun ÜÜniversitesi</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-header-bg-1 { background: linear-gradient(135deg, #1e3a5f, #0d2137); }
+    .project-header-bg-2 { background: linear-gradient(135deg, #4c0519, #881337); }
+    .project-header-bg-3 { background: linear-gradient(135deg, #064e3b, #065f46); }
+    .project-header-bg-4 { background: linear-gradient(135deg, #3b0764, #4c1d95); }
+    .project-header-bg-5 { background: linear-gradient(135deg, #1c1917, #292524); }
+    .project-header-bg-6 { background: linear-gradient(135deg, #0c4a6e, #075985); }
+
+    .research-group-card {
+      background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-xl);
+      overflow:hidden; transition:var(--transition-base);
+    }
+    .research-group-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); }
+    .rg-header {
+      padding: var(--space-8) var(--space-8) var(--space-6);
+      position:relative;
+    }
+    .rg-body { padding:0 var(--space-8) var(--space-8); }
+    .rg-title { font-family:var(--font-display); font-size:var(--text-xl); font-weight:700; color:white; margin-bottom:var(--space-2); }
+    .rg-desc { font-size:var(--text-sm); color:rgba(255,255,255,.75); line-height:1.6; }
+    .rg-members { display:flex; gap:var(--space-2); flex-wrap:wrap; margin-top:var(--space-5); }
+    .rg-member { background:rgba(255,255,255,.12); color:rgba(255,255,255,.9); font-size:var(--text-xs); padding:3px 10px; border-radius:var(--radius-full); }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-links">
+      <a href="https://samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7L2 14l10 5 10-5-10-5zm0 7L2 21l10 5 10-5-10-5z"/></svg> Samsun ÜÜniversitesi</a>
+      <a href="https://obs.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg> OBS</a>
+      <a href="https://uzem.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/></svg> UZEM</a>
+      <a href="http://eposta.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> E-Posta</a>
+    </div>
+    <div class="top-bar-right"><span>2025–2026 Akademik Yılı</span></div>
+  </div>
+</div>
+
+<header id="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" id="logo-link"><div class="nav-logo-text"><div class="nav-logo-sub">Samsun ÜÜniversitesi</div><div class="nav-logo-title">Yazılım Mühendisliği</div></div></a>
+    <nav>
+      <a href="index.html" class="nav-link">Ana Sayfa</a>
+      <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+      <a href="kadro.html" class="nav-link">Kadro</a>
+      <a href="mufredat.html" class="nav-link">Müfredat</a>
+      <a href="laboratuvarlar.html" class="nav-link">Laboratuvarlar</a>
+      <a href="duyurular.html" class="nav-link">Duyurular</a>
+      <a href="projeler.html" class="nav-link active">Projeler</a>
+      <a href="staj.html" class="nav-link">Staj</a>
+      <a href="aday-ogÖğÖğrenci.html" class="nav-link nav-cta">Aday ÖğÖğÖğrenci</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Ana Sayfa</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Projeler</span>
+    </div>
+    <div class="page-hero-badge"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg> Araştırma & Geliştirme</div>
+    <h1>Projeler & <span>Araştırma</span></h1>
+    <p class="page-hero-desc">TÜBİTAK destekli araştırma projelerimiz, bitirme tezlerimiz ve öğÖğÖğrenci projelerimizle yazılım dünyasına değer katıyoruz.</p>
+  </div>
+</section>
+
+<!-- İSTATİSTİKLER -->
+<section class="section section-alt" id="project-stats">
+  <div class="container">
+    <div class="grid-4">
+      <div class="stat-box"><div class="stat-value">18</div><div class="stat-label">Aktif Araştırma Projesi</div></div>
+      <div class="stat-box"><div class="stat-value">4</div><div class="stat-label">TÜBİTAK Projesi</div></div>
+      <div class="stat-box"><div class="stat-value">120+</div><div class="stat-label">Yayınlanan Makale</div></div>
+      <div class="stat-box"><div class="stat-value">200+</div><div class="stat-label">Bitirme Projesi</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ARAŞTIRMA GRUPLARI -->
+<section class="section" id="research-groups">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Araştırma</div>
+      <h2 class="section-title">Araştırma Gruplarımız</h2>
+      <p class="section-desc">Bölümümüz bünyesinde 4 temel araştırma grubu faaliyet göstermektedir.</p>
+    </div>
+    <div class="grid-2" id="rg-grid">
+      <div class="research-group-card" id="rg-1">
+        <div class="rg-header" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
+          <div style="margin-bottom:var(--space-4)"><svg style="width:36px;height:36px;fill:white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
+          <div class="rg-title">Yapay Zeka & Makine Öğrenmesi Grubu</div>
+          <div class="rg-desc">Derin öğrenme, doğal dil işleme ve bilgisayarlı görü alanlarında temel ve uygulamalı araştırmalar yürütülmektedir.</div>
+          <div class="rg-members">
+            <span class="rg-member">Doç. Dr. Muammer Türkoğlu</span>
+          </div>
+        </div>
+        <div class="rg-body">
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);padding-top:var(--space-5)">
+            <span class="badge badge-primary">NLP</span>
+            <span class="badge badge-primary">Derin Öğrenme</span>
+            <span class="badge badge-primary">Computer Vision</span>
+            <span class="badge badge-primary">Pekiştirmeli Öğrenme</span>
+          </div>
+        </div>
+      </div>
+      <div class="research-group-card" id="rg-2">
+        <div class="rg-header" style="background:linear-gradient(135deg,#4c0519,#881337)">
+          <div style="font-size:36px;margin-bottom:var(--space-4)">🔒</div>
+          <div class="rg-title">Siber Güvenlik Araştırma Grubu</div>
+          <div class="rg-desc">Ağ güvenliği, kriptografi, adli bilişim ve güvenli yazılım geliştirme metodolojileri üzerine araştırmalar.</div>
+          <div class="rg-members">
+            <span class="rg-member">Prof. Dr. F. Kaya</span>
+            <span class="rg-member">Dr. Öğr. Ü. H. Arslan</span>
+          </div>
+        </div>
+        <div class="rg-body">
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);padding-top:var(--space-5)">
+            <span class="badge badge-primary">Kriptografi</span>
+            <span class="badge badge-primary">Ağ Güvenliği</span>
+            <span class="badge badge-primary">Adli Bilişim</span>
+            <span class="badge badge-primary">Güvenli Yazılım</span>
+          </div>
+        </div>
+      </div>
+      <div class="research-group-card" id="rg-3">
+        <div class="rg-header" style="background:linear-gradient(135deg,#064e3b,#065f46)">
+          <div style="font-size:36px;margin-bottom:var(--space-4)">🌐</div>
+          <div class="rg-title">Yazılım Mühendisliği Araştırma Grubu</div>
+          <div class="rg-desc">Yazılım kalite güvencesi, yazılım mimarisi, DevOps ve agile yazılım geliştirme süreçleri üzerine araştırmalar.</div>
+          <div class="rg-members">
+            <span class="rg-member">Doç. Dr. M. Çelik</span>
+            <span class="rg-member">Dr. Öğr. Ü. E. Şahin</span>
+            <span class="rg-member">Arş. Gör. B. Toprak</span>
+          </div>
+        </div>
+        <div class="rg-body">
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);padding-top:var(--space-5)">
+            <span class="badge badge-accent">DevOps</span>
+            <span class="badge badge-accent">Microservices</span>
+            <span class="badge badge-accent">Yazılım Kalitesi</span>
+            <span class="badge badge-accent">Agile</span>
+          </div>
+        </div>
+      </div>
+      <div class="research-group-card" id="rg-4">
+        <div class="rg-header" style="background:linear-gradient(135deg,#3b0764,#4c1d95)">
+          <div style="font-size:36px;margin-bottom:var(--space-4)">📡</div>
+          <div class="rg-title">Gömülü Sistemler & IoT Grubu</div>
+          <div class="rg-desc">Nesnelerin interneti, akıllı şehir sistemleri, gömülü yazılım ve gerçek zamanlı sistemler üzerine araştırmalar.</div>
+          <div class="rg-members">
+            <span class="rg-member">Dr. Öğr. Ü. K. Öztürk</span>
+          </div>
+        </div>
+        <div class="rg-body">
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);padding-top:var(--space-5)">
+            <span class="badge badge-primary">IoT</span>
+            <span class="badge badge-primary">Akıllı Şehir</span>
+            <span class="badge badge-primary">RTOS</span>
+            <span class="badge badge-primary">Gömülü Yazılım</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÖĞRENCİ PROJELERİ -->
+<section class="section section-alt" id="student-projects">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">ÖğÖğÖğrenci Projeleri</div>
+      <h2 class="section-title">Öne Çıkan Bitirme Projeleri</h2>
+      <p class="section-desc">ÖğÖğÖğrencilerimizin kapsamlı proje çalışmalarından öne çıkan örnekler.</p>
+    </div>
+    <div class="grid-3" id="student-projects-grid">
+      <div class="project-card" id="project-1">
+        <div class="project-card-header project-header-bg-1">
+          <div style="position:relative;z-index:1"><svg style="width:52px;height:52px;fill:white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-tags">
+            <span class="badge badge-primary">Derin Öğrenme</span>
+            <span class="badge badge-neutral">Python</span>
+          </div>
+          <div class="project-card-title">Medikal Görüntü Analizi ile Hastalık Tespiti</div>
+          <p class="project-card-text">Derin öğrenme mimarileri kullanılarak akciğer görüntülerinden pnömoni tespiti yapan yapay zeka sistemi.</p>
+          <div style="margin-top:var(--space-5);font-size:var(--text-xs);color:var(--text-muted)">👤 Akademik Çalışma · 2025</div>
+        </div>
+      </div>
+
+      <div class="project-card" id="project-2">
+        <div class="project-card-header project-header-bg-3">
+          <div style="position:relative;z-index:1"><svg style="width:52px;height:52px;fill:white" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg></div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-tags">
+            <span class="badge badge-accent">E-Ticaret</span>
+            <span class="badge badge-neutral">React</span>
+          </div>
+          <div class="project-card-title">AI Destekli Öneri Motoru</div>
+          <p class="project-card-text">Hibrit filtreleme algoritmalarıyla kişiselleştirilmiş ürün önerileri sunan e-ticaret platformu altyapısı.</p>
+          <div style="margin-top:var(--space-5);font-size:var(--text-xs);color:var(--text-muted)">👤 Bitirme Projesi · 2025</div>
+        </div>
+      </div>
+
+      <div class="project-card" id="project-3">
+        <div class="project-card-header project-header-bg-4">
+          <div style="position:relative;z-index:1"><svg style="width:52px;height:52px;fill:white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-tags">
+            <span class="badge badge-primary">Blockchain</span>
+            <span class="badge badge-neutral">Solidity</span>
+          </div>
+          <div class="project-card-title">Blockchain Tabanlı Diploma Doğrulama</div>
+          <p class="project-card-text">Merkeziyetsiz ağlar üzerinde akademik belgelerin güvenli ve şeffaf şekilde doğrulanmasını sağlayan sistem.</p>
+          <div style="margin-top:var(--space-5);font-size:var(--text-xs);color:var(--text-muted)">👤 Mezuniyet Projesi · 2024</div>
+        </div>
+      </div>
+
+      <div class="project-card" id="project-6">
+        <div class="project-card-header project-header-bg-5">
+          <div style="position:relative;z-index:1"><svg style="width:52px;height:52px;fill:white" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-4H6V8h12v2z"/></svg></div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-tags">
+            <span class="badge badge-primary">NLP</span>
+            <span class="badge badge-neutral">Flutter</span>
+          </div>
+          <div class="project-card-title">Türkçe Haber Özetleme Uygulaması</div>
+          <p class="project-card-text">BERT tabanlı transformer modeli kullanan, uzun haber metinlerini otomatik olarak özetleyen uygulama.</p>
+          <div style="margin-top:var(--space-5);font-size:var(--text-xs);color:var(--text-muted)">👤 Zehra Nas · 2025</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TÜBİTAK -->
+<section class="section" id="tubitak-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Destekli Projeler</div>
+      <h2 class="section-title">TÜBİTAK & Sanayi Projeleri</h2>
+    </div>
+    <div class="table-wrapper" id="tubitak-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Proje Adı</th>
+            <th>Destek Kaynağı</th>
+            <th>Yürütücü</th>
+            <th>Dönem</th>
+            <th>Durum</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Türkçe Metin Veri Seti ile LLM Pre-training</strong></td>
+            <td><span class="badge badge-primary">TÜBİTAK 1001</span></td>
+            <td>Doç. Dr. Muammer Türkoğlu</td>
+            <td>2024–2026</td>
+            <td><span class="badge badge-accent">Devam Ediyor</span></td>
+          </tr>
+          <tr>
+            <td><strong>Siber Saldırı Tespit Sistemi (SIEM+ML)</strong></td>
+            <td><span class="badge badge-primary">TÜBİTAK 1001</span></td>
+            <td>Prof. Dr. Zafer Cömert</td>
+            <td>2023–2025</td>
+            <td><span class="badge badge-accent">Devam Ediyor</span></td>
+          </tr>
+          <tr>
+            <td><strong>Akıllı Şehir IoT Platform Mimarisi</strong></td>
+            <td><span class="badge badge-neutral">Samsun Büyükşehir Belediyesi</span></td>
+            <td>Dr. Öğr. Üyesi Alper Talha Karadeniz</td>
+            <td>2023–2024</td>
+            <td><span class="badge badge-dark">Tamamlandı</span></td>
+          </tr>
+          <tr>
+            <td><strong>Sağlık Sektöründe Federe Öğrenme</strong></td>
+            <td><span class="badge badge-primary">TÜBİTAK 3501</span></td>
+            <td>Doç. Dr. Muammer Türkoğlu</td>
+            <td>2025–2027</td>
+            <td><span class="badge badge-accent">Devam Ediyor</span></td>
+          </tr>
+          <tr>
+            <td><strong>Mikroservis Mimarisi için Otomatik Test Üretimi</strong></td>
+            <td><span class="badge badge-neutral">Sanayi Projesi</span></td>
+            <td>Dr. Öğr. Üyesi Emel Soylu</td>
+            <td>2024–2025</td>
+            <td><span class="badge badge-accent">Devam Ediyor</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip" id="cta-section">
+  <div class="container">
+    <h2>Araştırma Projelerimize Katılın</h2>
+    <p>TÜBİTAK 2209-A ile öğÖğÖğrenci araştırma destek programından yararlanmak veya devam eden projelere katkıda bulunmak için bizimle iletişime geçin.</p>
+    <div class="cta-buttons">
+      <a href="iletisim.html" class="btn btn-primary btn-lg">İletişime Geç</a>
+      <a href="kadro.html" class="btn btn-white btn-lg">Akademik Kadro</a>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer">
+  <div class="footer-top"><div class="container"><div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo" id="footer-logo" style="margin-bottom:var(--space-3);display:block"><div class="nav-logo-text" style="color:white"><div class="nav-logo-sub" style="color:var(--primary-light)">Samsun ÜÜniversitesi</div><div class="nav-logo-title" style="color:white">Yazılım Mühendisliği</div></div></a>
+      <p class="footer-brand-desc">Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü, dünya standartlarında yazılım mühendisleri yetiştirmeyi misyon edinmiş, MÜDEK akreditasyonlu bir bölümdür.</p>
+      <div class="footer-social"><a href="#" class="footer-social-link">𝕏</a><a href="#" class="footer-social-link">in</a><a href="#" class="footer-social-link">◎</a></div>
+    </div>
+    <div><div class="footer-col-title">Bölüm</div><div class="footer-links"><a href="hakkimizda.html">Hakkımızda</a><a href="kadro.html">Akademik Kadro</a><a href="laboratuvarlar.html">Laboratuvarlar</a><a href="projeler.html">Projeler</a></div></div>
+    <div><div class="footer-col-title">Eğitim</div><div class="footer-links"><a href="mufredat.html">Müfredat</a><a href="staj.html">Staj</a><a href="duyurular.html">Duyurular</a><a href="aday-ogÖğÖğrenci.html">Aday ÖğÖğÖğrenci</a></div></div>
+    <div><div class="footer-col-title">Bağlantılar</div><div class="footer-links"><a href="iletisim.html">İletişim</a><a href="https://samsun.edu.tr" target="_blank">Üniversite</a><a href="https://obs.samsun.edu.tr" target="_blank">OBS</a></div></div>
+  </div></div></div>
+  <div class="footer-bottom"><div class="container"><div class="footer-bottom-inner"><div>© 2026 Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü.</div><div class="footer-bottom-links"><a href="#">Gizlilik</a><a href="iletisim.html">İletişim</a></div></div></div></div>
+</footer>
+<script>
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 10); });
+</script>
+</body>
+</html>
+
+

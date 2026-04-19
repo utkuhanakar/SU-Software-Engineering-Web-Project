@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü iletişim bilgileri, konum ve iletişim formu." />
+  <title>İletişim — Yazılım Mühendisliği | Samsun ÜÜniversitesi</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-grid {
+      display:grid; grid-template-columns:1fr 1.6fr;
+      gap:var(--space-12); align-items:start;
+    }
+    @media(max-width:1024px){ .contact-grid { grid-template-columns:1fr; } }
+
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-5); }
+    @media(max-width:640px){ .form-row { grid-template-columns:1fr; } }
+
+    .success-msg {
+      display:none;
+      background: var(--accent-ultra); border:1px solid var(--accent);
+      border-radius:var(--radius-lg); padding:var(--space-5) var(--space-6);
+      color:var(--accent-dark); font-weight:600;
+    }
+
+    .social-card {
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:var(--radius-lg); padding:var(--space-6);
+      display:flex; align-items:center; gap:var(--space-5);
+      transition:var(--transition-base); text-decoration:none;
+    }
+    .social-card:hover { border-color:var(--primary); box-shadow:var(--shadow-md); transform:translateY(-2px); }
+    .social-card-icon {
+      width:52px; height:52px; border-radius:var(--radius-md);
+      display:flex; align-items:center; justify-content:center;
+      font-size:22px; flex-shrink:0;
+    }
+    .social-card-title { font-weight:700; font-size:var(--text-base); color:var(--text-primary); }
+    .social-card-handle { font-size:var(--text-sm); color:var(--text-muted); }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-links">
+      <a href="https://samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7L2 14l10 5 10-5-10-5zm0 7L2 21l10 5 10-5-10-5z"/></svg> Samsun ÜÜniversitesi</a>
+      <a href="https://ebys.samsun.edu.tr/" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg> EBYS</a>
+      <a href="https://vpys.samsun.edu.tr/" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/></svg> VPYS</a>
+      <a href="https://uzem.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/></svg> UZEM</a>
+      <a href="http://eposta.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> E-Posta</a>
+    </div>
+    <div class="top-bar-right"><span>2025–2026 Akademik Yılı</span></div>
+  </div>
+</div>
+
+<header id="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" id="logo-link"><div class="nav-logo-text"><div class="nav-logo-sub">Samsun ÜÜniversitesi</div><div class="nav-logo-title">Yazılım Mühendisliği</div></div></a>
+    <nav>
+      <a href="index.html" class="nav-link">Ana Sayfa</a>
+      <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+      <a href="kadro.html" class="nav-link">Kadro</a>
+      <a href="mufredat.html" class="nav-link">Müfredat</a>
+      <a href="laboratuvarlar.html" class="nav-link">Laboratuvarlar</a>
+      <a href="duyurular.html" class="nav-link">Duyurular</a>
+      <a href="projeler.html" class="nav-link">Projeler</a>
+      <a href="staj.html" class="nav-link">Staj</a>
+      <a href="aday-ogÖğÖğrenci.html" class="nav-link nav-cta">Aday ÖğÖğÖğrenci</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Ana Sayfa</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">İletişim</span>
+    </div>
+    <div class="page-hero-badge"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> Bize Ulaşın</div>
+    <h1>İletişim <span>Bilgileri</span></h1>
+    <p class="page-hero-desc">Kurumsal iletişim numaralarımız, e-posta adreslerimiz ve bölüm sekreterliğimiz ile bağlantı kurabilirsiniz.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section" id="contact-section">
+  <div class="container">
+    <div class="contact-grid" id="contact-grid">
+
+      <!-- SOL: İletişim Bilgileri -->
+      <div id="contact-info-col">
+        <h2 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;color:var(--text-primary);margin-bottom:var(--space-8);letter-spacing:-0.02em">Bölüm İletişim Bilgileri</h2>
+
+        <div class="contact-info-item" id="contact-address">
+          <div class="contact-info-icon"><svg style="width:20px;height:20px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+          <div>
+            <div class="contact-info-label">Adres</div>
+            <div class="contact-info-value">Samsun ÜÜniversitesi Mühendislik ve Doğa Bilimleri Fakültesi<br/>Yazılım Mühendisliği Bölümü<br/>Ballıca Kampüsü, 19 Mayıs / Samsun</div>
+          </div>
+        </div>
+
+        <div class="contact-info-item" id="contact-phone">
+          <div class="contact-info-icon"><svg style="width:20px;height:20px;fill:currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+          <div>
+            <div class="contact-info-label">Telefon</div>
+            <div class="contact-info-value">0 (362) 313 00 55 (Dahili: 2000)</div>
+          </div>
+        </div>
+
+        <div class="contact-info-item" id="contact-email">
+          <div class="contact-info-icon"><svg style="width:20px;height:20px;fill:currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+          <div>
+            <div class="contact-info-label">E-Posta</div>
+            <div class="contact-info-value">yazilimmuhendisligi@samsun.edu.tr</div>
+          </div>
+        </div>
+
+        <div class="contact-info-item" id="contact-secretary">
+          <div class="contact-info-icon"><svg style="width:20px;height:20px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+          <div>
+            <div class="contact-info-label">Bölüm Sekreteri</div>
+            <div class="contact-info-value">Selda Karga<br/>selda.karga@samsun.edu.tr</div>
+          </div>
+        </div>
+
+        <!-- Sosyal Medya -->
+        <h3 style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;color:var(--text-primary);margin:var(--space-8) 0 var(--space-5)" id="social-title">Sosyal Medya</h3>
+        <div style="display:flex;flex-direction:column;gap:var(--space-3)" id="social-cards">
+          <a href="#" class="social-card" id="social-twitter">
+            <div class="social-card-icon" style="background:#EFF6FF">𝕏</div>
+            <div>
+              <div class="social-card-title">Twitter / X</div>
+              <div class="social-card-handle">@samsunuyazilim</div>
+            </div>
+          </a>
+          <a href="#" class="social-card" id="social-instagram">
+            <div class="social-card-icon" style="background:var(--primary-ultra)">◎</div>
+            <div>
+              <div class="social-card-title">Instagram</div>
+              <div class="social-card-handle">@samsunuyazilim</div>
+            </div>
+          </a>
+          <a href="#" class="social-card" id="social-linkedin">
+            <div class="social-card-icon" style="background:#EFF6FF">in</div>
+            <div>
+              <div class="social-card-title">LinkedIn</div>
+              <div class="social-card-handle">Samsun ÜÜniversitesi YMB</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- SAĞ: Form + Harita -->
+      <div id="contact-form-col">
+        <div class="card" style="margin-bottom:var(--space-8)" id="contact-form-card">
+          <h2 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;color:var(--text-primary);margin-bottom:var(--space-2);letter-spacing:-0.02em">Mesaj Gönderin</h2>
+          <p style="color:var(--text-muted);font-size:var(--text-sm);margin-bottom:var(--space-8)">Formun tüm alanlarını eksiksiz doldurunuz. En geç 2 iş günü içinde yanıt verilecektir.</p>
+
+          <div id="success-msg" class="success-msg">
+            <svg style="width:16px;height:16px;fill:currentColor;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Mesajınız sisteme başarıyla iletilmiştir.
+          </div>
+
+          <form id="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fname">Ad *</label>
+                <input type="text" id="fname" name="fname" class="form-control" placeholder="Adınız" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lname">Soyad *</label>
+                <input type="text" id="lname" name="lname" class="form-control" placeholder="Soyadınız" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">E-Posta *</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="ornek@email.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="+90 5XX XXX XX XX" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="subject">Konu *</label>
+              <select id="subject" name="subject" class="form-control" required style="cursor:pointer">
+                <option value="">Konu seçiniz...</option>
+                <option value="genel">Genel Bilgi</option>
+                <option value="staj">Staj Bilgisi</option>
+                <option value="mufredat">Müfredat</option>
+                <option value="aday">Aday ÖğÖğÖğrenci</option>
+                <option value="akademik">Akademik İş Birliği</option>
+                <option value="diger">Diğer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Mesaj *</label>
+              <textarea id="message" name="message" class="form-control" placeholder="Mesajınızı buraya yazınız..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg w-full" id="submit-btn" style="justify-content:center">
+              <svg style="width:18px;height:18px;fill:currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> Formu Gönder
+            </button>
+          </form>
+        </div>
+
+        <!-- Harita Placeholder -->
+        <div class="map-placeholder" id="map-placeholder">
+          <div class="map-pin"><svg style="width:36px;height:36px;fill:var(--primary)" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+          <div>Samsun ÜÜniversitesi • Ballıca Kampüsü</div>
+          <div style="font-size:var(--text-xs)">19 Mayıs / Samsun</div>
+          <a href="https://goo.gl/maps" target="_blank" class="btn btn-primary" id="map-link" style="margin-top:var(--space-4)">Google Maps'te Aç</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KAMPÜSE GELİŞ -->
+<section class="section section-alt" id="directions-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Ulaşım</div>
+      <h2 class="section-title">Kampüse Nasıl Gelinir?</h2>
+    </div>
+    <div class="grid-3" id="directions-grid">
+      <div class="card" id="dir-1">
+        <div class="card-icon card-icon-primary" style="font-size:28px"><svg style="width:28px;height:28px;fill:currentColor" viewBox="0 0 24 24"><path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"/></svg></div>
+        <h3 class="card-title">Toplu Taşıma</h3>
+        <p class="card-text">Samsun şehir merkezinden 19 Mayıs ilçesine giden minibüsler veya belediye otobüs platformlarını kullanarak Ballıca Yerleşkesine ulaşım sağlayabilirsiniz.</p>
+      </div>
+      <div class="card" id="dir-2">
+        <div class="card-icon card-icon-accent" style="font-size:28px"><svg style="width:28px;height:28px;fill:currentColor" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></div>
+        <h3 class="card-title">Özel Araç</h3>
+        <p class="card-text">Samsun istikametinden Sinop yönüne D010 karayolu üzerinden 19 Mayıs Ballıca yol ayrımından giriş yaparak yerleşkeye ulaşabilirsiniz.</p>
+      </div>
+      <div class="card" id="dir-3">
+        <div class="card-icon card-icon-dark" style="font-size:28px"><svg style="width:28px;height:28px;fill:currentColor" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5L21 16z"/></svg></div>
+        <h3 class="card-title">Havalimanı Bağlantısı</h3>
+        <p class="card-text">Samsun-Çarşamba Havalimanı uçuşlarınızın ardından şehir merkezine otobüs ile ulaşıp Batı garajından 19 Mayıs araçlarına aktarma yapabilirsiniz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer">
+  <div class="footer-top"><div class="container"><div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo" id="footer-logo" style="margin-bottom:var(--space-3);display:block"><div class="nav-logo-text" style="color:white"><div class="nav-logo-sub" style="color:var(--primary-light)">Samsun ÜÜniversitesi</div><div class="nav-logo-title" style="color:white">Yazılım Mühendisliği</div></div></a>
+      <p class="footer-brand-desc">Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü, dünya standartlarında yazılım mühendisleri yetiştirmeyi misyon edinmiş, MÜDEK akreditasyonlu bir bölümdür.</p>
+      <div class="footer-social"><a href="#" class="footer-social-link">𝕏</a><a href="#" class="footer-social-link">in</a><a href="#" class="footer-social-link">◎</a></div>
+    </div>
+    <div><div class="footer-col-title">Bölüm</div><div class="footer-links"><a href="hakkimizda.html">Hakkımızda</a><a href="kadro.html">Akademik Kadro</a><a href="laboratuvarlar.html">Laboratuvarlar</a><a href="projeler.html">Projeler</a></div></div>
+    <div><div class="footer-col-title">Eğitim</div><div class="footer-links"><a href="mufredat.html">Müfredat</a><a href="staj.html">Staj</a><a href="duyurular.html">Duyurular</a><a href="aday-ogÖğÖğrenci.html">Aday ÖğÖğÖğrenci</a></div></div>
+    <div><div class="footer-col-title">Bağlantılar</div><div class="footer-links"><a href="iletisim.html">İletişim</a><a href="https://samsun.edu.tr" target="_blank">Üniversite</a><a href="https://obs.samsun.edu.tr" target="_blank">OBS</a></div></div>
+  </div></div></div>
+  <div class="footer-bottom"><div class="container"><div class="footer-bottom-inner"><div>© 2026 Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü.</div><div class="footer-bottom-links"><a href="#">Gizlilik</a><a href="iletisim.html">İletişim</a></div></div></div></div>
+</footer>
+
+<script>
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 10); });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('contact-form');
+    const msg  = document.getElementById('success-msg');
+    const btn  = document.getElementById('submit-btn');
+    btn.textContent = 'Gönderiliyor...';
+    btn.disabled = true;
+    // Simulate async submission
+    setTimeout(() => {
+      form.reset();
+      msg.style.display = 'block';
+      btn.innerHTML = '<svg style="width:18px;height:18px;fill:currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> Formu Gönder';
+      btn.disabled = false;
+      msg.scrollIntoView({ behavior:'smooth', block:'center' });
+    }, 1200);
+  }
+</script>
+</body>
+</html>
+
+
