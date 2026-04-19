@@ -1,354 +1,351 @@
-﻿<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü'ne başvurmak isteyen aday öğÖğÖğrenciler için puan türleri, kontenjanlar, burslar ve kariyer bilgileri." />
-  <title>Aday ÖğÖğÖğrenci — Yazılım Mühendisliği | Samsun ÜÜniversitesi</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .admission-hero {
-      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark2) 50%, #0a1628 100%);
-      min-height: 70vh;
-      display:flex; align-items:center;
-      position: relative; overflow:hidden;
-      padding: var(--space-24) 0;
-    }
-    .admission-hero::before {
-      content:''; position:absolute; inset:0;
-      background:
-        radial-gradient(ellipse 60% 80% at 80% 40%, rgba(185,28,28,.18) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 60% at 15% 80%, rgba(13,148,136,.12) 0%, transparent 60%);
-    }
-    .admission-hero::after {
-      content:''; position:absolute; inset:0;
-      background:
-        linear-gradient(rgba(185,28,28,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(185,28,28,.04) 1px, transparent 1px);
-      background-size: 48px 48px;
-    }
-    .score-card {
-      background:var(--bg-card); border:1px solid var(--border);
-      border-radius:var(--radius-xl); padding:var(--space-8);
-      transition:var(--transition-base); text-align:center;
-    }
-    .score-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); border-color:var(--primary); }
-    .score-value { font-family:var(--font-display); font-size:var(--text-5xl); font-weight:800; color:var(--primary); letter-spacing:-0.04em; line-height:1; }
-    .score-label { font-size:var(--text-sm); color:var(--text-muted); margin-top:var(--space-2); }
-    .score-year { font-size:var(--text-xs); color:var(--text-muted); }
-
-    .why-item {
-      display:flex; gap:var(--space-5); align-items:flex-start;
-      padding:var(--space-6);
-      background:var(--bg-card); border:1px solid var(--border);
-      border-radius:var(--radius-lg); transition:var(--transition-base);
-    }
-    .why-item:hover { border-color:var(--accent); box-shadow:var(--shadow-sm); transform:translateX(4px); }
-    .why-icon { font-size:28px; flex-shrink:0; }
-    .why-title { font-weight:700; font-size:var(--text-base); color:var(--text-primary); margin-bottom:var(--space-2); }
-    .why-text { font-size:var(--text-sm); color:var(--text-secondary); line-height:1.6; }
-
-    .career-card {
-      background:var(--bg-card); border:1px solid var(--border);
-      border-radius:var(--radius-xl); padding:var(--space-8);
-      text-align:center; transition:var(--transition-base);
-    }
-    .career-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); }
-    .career-emoji { font-size:40px; margin-bottom:var(--space-4); }
-    .career-title { font-family:var(--font-display); font-size:var(--text-lg); font-weight:700; color:var(--text-primary); margin-bottom:var(--space-3); }
-    .career-salary { font-size:var(--text-sm); color:var(--accent); font-weight:600; margin-top:var(--space-3); }
-
-    .company-logo-strip {
-      display:flex; flex-wrap:wrap; gap:var(--space-4); justify-content:center; align-items:center;
-    }
-    .company-badge {
-      padding: var(--space-3) var(--space-6);
-      background:var(--bg-card); border:1px solid var(--border);
-      border-radius:var(--radius-full);
-      font-size:var(--text-sm); font-weight:600;
-      color:var(--text-secondary); transition:var(--transition-fast);
-    }
-    .company-badge:hover { border-color:var(--primary); color:var(--primary); background:var(--primary-ultra); }
-  </style>
-</head>
-<body>
-
-<div class="top-bar">
-  <div class="top-bar-inner">
-    <div class="top-bar-links">
-      <a href="https://samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7L2 14l10 5 10-5-10-5zm0 7L2 21l10 5 10-5-10-5z"/></svg> Samsun ÜÜniversitesi</a>
-      <a href="https://obs.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg> OBS</a>
-      <a href="https://uzem.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/></svg> UZEM</a>
-      <a href="http://eposta.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> E-Posta</a>
-    </div>
-    <div class="top-bar-right"><span>2025–2026 Akademik Yılı</span></div>
-  </div>
-</div>
-
-<header id="site-header">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" id="logo-link"><div class="nav-logo-text"><div class="nav-logo-sub">Samsun ÜÜniversitesi</div><div class="nav-logo-title">Yazılım Mühendisliği</div></div></a>
-    <nav>
-      <a href="index.html" class="nav-link">Ana Sayfa</a>
-      <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
-      <a href="kadro.html" class="nav-link">Kadro</a>
-      <a href="mufredat.html" class="nav-link">Müfredat</a>
-      <a href="laboratuvarlar.html" class="nav-link">Laboratuvarlar</a>
-      <a href="duyurular.html" class="nav-link">Duyurular</a>
-      <a href="projeler.html" class="nav-link">Projeler</a>
-      <a href="staj.html" class="nav-link">Staj</a>
-      <a href="aday-ogÖğÖğrenci.html" class="nav-link active nav-cta">Aday ÖğÖğÖğrenci</a>
-    </nav>
-  </div>
-</header>
-
-<!-- ADMISSION────── HERO ──────-->
-<section class="admission-hero" id="admission-hero">
-  <div class="container" style="position:relative;z-index:1">
-    <div style="text-align:center;max-width:800px;margin:0 auto">
-      <div class="hero-eyebrow" style="justify-content:center;margin-bottom:var(--space-6)">
-        <span class="hero-eyebrow-dot"></span>
-        2025–2026 Kayıt & Başvuru
-      </div>
-      <h1 style="font-family:var(--font-display);font-size:clamp(var(--text-4xl),7vw,var(--text-7xl));font-weight:800;color:white;letter-spacing:-0.04em;line-height:1.05;margin-bottom:var(--space-6)">
-        Geleceğini Buradan<br/>
-        <span style="background:linear-gradient(135deg,var(--primary-light),#FBBF24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">İnşa Et</span>
-      </h1>
-      <p style="font-size:var(--text-xl);color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:var(--space-10)">
-        Yazılım Mühendisliği Bölümümüz, seni geleceğin teknoloji dünyasına hazırlayacak en iyi programı sunmaktadır. Başvurun, hayalindeki kariyere ilk adımını at.
-      </p>
-      <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap">
-        <a href="https://yokatlas.yok.gov.tr/lisans.php?y=112771232" target="_blank" class="btn btn-primary btn-lg" id="yokatlas-btn">YÖK Atlas'ta İncele</a>
-        <a href="iletisim.html" class="btn btn-white btn-lg" id="contact-btn-hero">Bize Ulaş</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PUAN VE KONTEYJAN -->
-<section class="section" id="quotas-section">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">YKS 2025</div>
-      <h2 class="section-title">Puan Türü & Kontenjan</h2>
-      <p class="section-desc">Güncel puan ve kontenjan bilgileri için YÖK Atlas sistemini ziyaret ediniz. Aşağıdaki veriler 2024 YKS'ye aittir.</p>
-    </div>
-    <div class="grid-4" id="score-cards">
-    <div class="grid-4" id="score-cards">
-      <div class="score-card" id="score-1">
-        <div style="margin-bottom:var(--space-4)"><svg style="width:24px;height:24px;fill:var(--primary)" viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h14v-8h3L12 3z"/></svg></div>
-        <div style="font-size:var(--text-sm);font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--space-3)">Puan Türü</div>
-        <div style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:800;color:var(--primary)">SAY</div>
-        <div class="score-label">Sayısal</div>
-      </div>
-      <div class="score-card" id="score-2">
-        <div style="margin-bottom:var(--space-4)"><svg style="width:24px;height:24px;fill:var(--primary)" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
-        <div style="font-size:var(--text-sm);font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--space-3)">2024 Taban Puanı</div>
-        <div class="score-value">378.5</div>
-        <div class="score-year">YKS 2024</div>
-      </div>
-      <div class="score-card" id="score-3">
-        <div style="margin-bottom:var(--space-4)"><svg style="width:24px;height:24px;fill:var(--primary)" viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg></div>
-        <div style="font-size:var(--text-sm);font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--space-3)">2024 Tavan Puanı</div>
-        <div class="score-value">397.2</div>
-        <div class="score-year">YKS 2024</div>
-      </div>
-      <div class="score-card" id="score-4">
-        <div style="margin-bottom:var(--space-4)"><svg style="width:24px;height:24px;fill:var(--primary)" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
-        <div style="font-size:var(--text-sm);font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--space-3)">Yıllık Kontenjan</div>
-        <div class="score-value">100</div>
-        <div class="score-label">ÖğÖğÖğrenci</div>
-      </div>
-    </div>
-    </div>
-
-    <div class="card" style="margin-top:var(--space-8);background:linear-gradient(135deg,var(--primary-ultra),rgba(13,148,136,.05));border-color:var(--primary)" id="atlas-info">
-      <div style="display:flex;align-items:center;gap:var(--space-4)">
-        <div style="font-size:32px"><svg style="width:32px;height:32px;fill:var(--primary)" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
-        <div>
-          <div style="font-weight:700;color:var(--primary);margin-bottom:var(--space-2)">Güncel Bilgiler için YÖK Atlas'ı Ziyaret Edin</div>
-          <p style="color:var(--text-secondary);font-size:var(--text-sm)">Puan, kontenjan ve başarı sıralaması bilgileri her yıl güncellenmektedir. En doğru ve güncel bilgiye YÖK Atlas üzerinden ulaşabilirsiniz.</p>
-        </div>
-        <a href="https://yokatlas.yok.gov.tr/lisans.php?y=112771232" target="_blank" class="btn btn-primary" style="white-space:nowrap;flex-shrink:0" id="yokatlas-btn-2">YÖK Atlas →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BURSLAR -->
-<section class="section section-alt" id="scholarships-section">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">Finansal Destek</div>
-      <h2 class="section-title">Burs & Destek Programları</h2>
-      <p class="section-desc">Üniversitemiz ve bölümümüzün sunduğu çeşitli burs ve destek programlarından yararlanabilirsiniz.</p>
-    </div>
-    <div class="grid-3" id="scholarship-grid">
-      <div class="card" id="sch-1">
-        <div class="card-icon card-icon-primary" style="display:flex;align-items:center;justify-content:center"><svg style="width:28px;height:28px;fill:var(--primary)" viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0011 15.9V19H7v2h10v-2h-4v-3.1a5.01 5.01 0 004.61-2.96C19.08 10.63 21 8.55 21 6V5c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg></div>
-        <h3 class="card-title">Başarı Bursu</h3>
-        <p class="card-text">YKS başarı sıralamasına göre tam veya kısmi burs imkânı. İlk %1, %5 ve %10 dilimlerine göre %100, %75 ve %50 burs verilmektedir.</p>
-        <div style="margin-top:var(--space-5)"><span class="badge badge-primary">%100'e kadar</span></div>
-      </div>
-      <div class="card" id="sch-2">
-        <div class="card-icon card-icon-accent" style="display:flex;align-items:center;justify-content:center"><svg style="width:28px;height:28px;fill:var(--accent)" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.89 9L12 4.58 20.11 9 12 13.42 3.89 9z"/></svg></div>
-        <h3 class="card-title">KYK Yurt Bursu</h3>
-        <p class="card-text">Kredi ve Yurtlar Kurumu aracılığıyla burs ve kredi imkânları. KYK bursu için üniversite kayıt yaptırdıktan sonra başvurabilirsiniz.</p>
-        <div style="margin-top:var(--space-5)"><span class="badge badge-accent">KYK Başvurusu</span></div>
-      </div>
-      <div class="card" id="sch-3">
-        <div class="card-icon card-icon-dark" style="display:flex;align-items:center;justify-content:center"><svg style="width:28px;height:28px;fill:var(--text-primary)" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
-        <h3 class="card-title">Sektör Burs Programları</h3>
-        <p class="card-text">Teknoloji şirketlerinin bölümümüzle işbirliği kapsamında sunduğu özel burs programları ile öğÖğÖğrencilerimize destek sağlanmaktadır.</p>
-        <div style="margin-top:var(--space-5)"><span class="badge badge-dark">Detaylar için İletişim</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NEDEN BİZİ SEÇMELİSİN -->
-<section class="section" id="why-us-section">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">Avantajlar</div>
-      <h2 class="section-title">Neden Bizi Seçmelisin?</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5)" id="why-grid">
-      <div class="why-item" id="why-1"><div class="why-icon"><svg style="width:28px;height:28px;fill:var(--accent)" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div><div><div class="why-title">MÜDEK Akreditasyonu</div><div class="why-text">Uluslararası standartlarda mühendislik eğitimi garantisi.</div></div></div>
-      <div class="why-item" id="why-2"><div class="why-icon"><svg style="width:28px;height:28px;fill:var(--accent)" viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg></div><div><div class="why-title">Merkezi Konum</div><div class="why-text">Şehir merkezine yakın, ulaşımı kolay kampüs imkânı.</div></div></div>
-      <div class="why-item" id="why-3"><div class="why-icon"><svg style="width:28px;height:28px;fill:var(--accent)" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.89 9L12 4.58 20.11 9 12 13.42 3.89 9z"/></svg></div><div><div class="why-title">Akademik Kadro</div><div class="why-text">Alanında uzman, yenilikçi ve dinamik öğretim üyeleri.</div></div></div>
-      <div class="why-item" id="why-4"><div class="why-icon"><svg style="width:28px;height:28px;fill:var(--accent)" viewBox="0 0 24 24"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg></div><div><div class="why-title">Laboratuvar Altyapısı</div><div class="why-text">Modern donanımlı AI, IoT ve siber güvenlik laboratuvarları.</div></div></div>
-      <div class="why-item" id="why-5"><div class="why-icon"><svg style="width:28px;height:28px;fill:var(--accent)" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zM10 4h4v2h-4V4z"/></svg></div><div><div class="why-title">Kariyer Olanakları</div><div class="why-text">Mezunlarımızın büyük çoğunluğu mezuniyet sonrası iş hayatına katılmaktadır.</div></div></div>
-      <div class="why-item" id="why-6"><div class="why-icon"><svg style="width:28px;height:28px;fill:var(--accent)" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div><div><div class="why-title">Erasmus+ Programı</div><div class="why-text">Avrupa üniversiteleriyle zengin değişim programı seçenekleri.</div></div></div>
-      <div class="why-item" id="why-7"><div class="why-icon"><svg style="width:28px;height:28px;fill:var(--accent)" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><div><div class="why-title">Girişimcilik</div><div class="why-text">Teknokent ve kuluçka merkezi olanaklarıyla girişimci desteği.</div></div></div>
-      <div class="why-item" id="why-8"><div class="why-icon"><svg style="width:28px;height:28px;fill:var(--accent)" viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0011 15.9V19H7v2h10v-2h-4v-3.1a5.01 5.01 0 004.61-2.96C19.08 10.63 21 8.55 21 6V5c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg></div><div><div class="why-title">ÖğÖğÖğrenci Bursları</div><div class="why-text">Akademik başarıya dayalı çeşitli burs imkânları.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- KARİYER -->
-<section class="section section-alt" id="career-section">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">Kariyer Fırsatları</div>
-      <h2 class="section-title">Mezunlarımız Nerede Çalışıyor?</h2>
-      <p class="section-desc">Yazılım mühendisliği mezunları, Türkiye'nin en prestijli teknoloji şirketlerinde rol alıyor.</p>
-    </div>
-    <div class="company-logo-strip" id="company-strip" style="margin-bottom:var(--space-16)">
-      <div class="company-badge">Microsoft Türkiye</div>
-      <div class="company-badge">Trendyol</div>
-      <div class="company-badge">Getir</div>
-      <div class="company-badge">Arçelik</div>
-      <div class="company-badge">Turkcell</div>
-      <div class="company-badge">Logo Yazılım</div>
-      <div class="company-badge">Huawei Türkiye</div>
-      <div class="company-badge">Havelsan</div>
-      <div class="company-badge">Roketsan</div>
-      <div class="company-badge">PayCore</div>
-    </div>
-    <div class="grid-4" id="career-grid">
-      <div class="career-card" id="career-1">
-        <div class="career-emoji" style="display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg style="width:40px;height:40px;fill:var(--primary)" viewBox="0 0 24 24"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg></div>
-        <div class="career-title">Yazılım Geliştirici</div>
-        <p style="font-size:var(--text-sm);color:var(--text-secondary)">Full-stack, backend veya frontend geliştirici olarak global teknoloji şirketlerinde kariyer fırsatları.</p>
-        <div class="career-salary">⬆ Ortalama: 65K–120K TL/ay</div>
-      </div>
-      <div class="career-card" id="career-2">
-        <div class="career-emoji" style="display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg style="width:40px;height:40px;fill:var(--primary)" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
-        <div class="career-title">AI/ML Mühendisi</div>
-        <p style="font-size:var(--text-sm);color:var(--text-secondary)">Yapay zeka ve makine öğrenmesi modelleri geliştiren akademik ve endüstriyel mühendis rolleri.</p>
-        <div class="career-salary">⬆ Ortalama: 80K–150K TL/ay</div>
-      </div>
-      <div class="career-card" id="career-3">
-        <div class="career-emoji" style="display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg style="width:40px;height:40px;fill:var(--primary)" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/></svg></div>
-        <div class="career-title">Siber Güvenlik Uzmanı</div>
-        <p style="font-size:var(--text-sm);color:var(--text-secondary)">Kurumsal veri güvenliğini sağlayan, zafiyet analizi ve savunma sistemleri uzmanlığı.</p>
-        <div class="career-salary">⬆ Ortalama: 75K–140K TL/ay</div>
-      </div>
-      <div class="career-card" id="career-4">
-        <div class="career-emoji" style="display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg style="width:40px;height:40px;fill:var(--primary)" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4 0-2.05 1.53-3.76 3.56-3.97l1.07-.11.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.23 1.15 1.18.04C20.42 11.67 22 13.18 22 15c0 1.65-1.35 3-3 3z"/></svg></div>
-        <div class="career-title">Cloud & DevOps Mühendisi</div>
-        <p style="font-size:var(--text-sm);color:var(--text-secondary)">Ölçeklenebilir bulut altyapıları ve modern yazılım dağıtım (CI/CD) süreçleri yönetimi.</p>
-        <div class="career-salary">⬆ Ortalama: 85K–160K TL/ay</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ÖĞRENCİ YORUMLARI -->
-<section class="section" id="testimonials-section">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">ÖğÖğÖğrenci Deneyimleri</div>
-      <h2 class="section-title">ÖğÖğÖğrencilerimiz Ne Diyor?</h2>
-    </div>
-    <div class="grid-3" id="testimonial-grid">
-      <div class="card" id="test-1">
-        <div style="font-size:24px;margin-bottom:var(--space-4);color:var(--primary)">❝</div>
-        <p style="color:var(--text-secondary);line-height:1.75;margin-bottom:var(--space-6);font-style:italic">"Bölümümüzdeki AI laboratuvarı sayesinde yapay zeka alanındaki projelerimizi gerçek GPU altyapısında geliştirebildik. Bu deneyim staj sürecimde büyük fark yarattı."</p>
-        <div style="display:flex;align-items:center;gap:var(--space-3)">
-          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">AK</div>
-          <div>
-            <div style="font-weight:600;font-size:var(--text-sm)">Ali Kara</div>
-            <div style="font-size:var(--text-xs);color:var(--text-muted)">3. Sınıf ÖğÖğÖğrencisi</div>
-          </div>
-        </div>
-      </div>
-      <div class="card" id="test-2">
-        <div style="font-size:24px;margin-bottom:var(--space-4);color:var(--primary)">❝</div>
-        <p style="color:var(--text-secondary);line-height:1.75;margin-bottom:var(--space-6);font-style:italic">"Staj coordinatörümüz sayesinde tercih ettiğim şirkette staj yaptım. Hocalarımızın endüstri bağlantıları gerçekten çok güçlü."</p>
-        <div style="display:flex;align-items:center;gap:var(--space-3)">
-          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">MY</div>
-          <div>
-            <div style="font-weight:600;font-size:var(--text-sm)">Merve Yurt</div>
-            <div style="font-size:var(--text-xs);color:var(--text-muted)">4. Sınıf ÖğÖğÖğrencisi</div>
-          </div>
-        </div>
-      </div>
-      <div class="card" id="test-3">
-        <div style="font-size:24px;margin-bottom:var(--space-4);color:var(--primary)">❝</div>
-        <p style="color:var(--text-secondary);line-height:1.75;margin-bottom:var(--space-6);font-style:italic">"Erasmus programıyla Polonya'da bir dönem okudum. Bölümümüz bu konuda çok destekleyici ve süreç oldukça sorunsuz ilerledi."</p>
-        <div style="display:flex;align-items:center;gap:var(--space-3)">
-          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#7C3AED,#4C1D95);display:flex;align-items:center;justify-content:center;color:white;font-weight:700">SK</div>
-          <div>
-            <div style="font-weight:600;font-size:var(--text-sm)">Sena Kurt</div>
-            <div style="font-size:var(--text-xs);color:var(--text-muted)">Mezun · 2025</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-strip" id="cta-section">
-  <div class="container">
-    <h2>Geleceğine Yatırım Yap</h2>
-    <p>Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü hakkında daha fazla bilgi almak için bizimle iletişime geç.</p>
-    <div class="cta-buttons">
-      <a href="https://yokatlas.yok.gov.tr/lisans.php?y=112771232" target="_blank" class="btn btn-primary btn-lg">YÖK Atlas'ta İncele</a>
-      <a href="iletisim.html" class="btn btn-white btn-lg">Bize Sor</a>
-    </div>
-  </div>
-</section>
-
-<footer id="site-footer">
-  <div class="footer-top"><div class="container"><div class="footer-grid">
-    <div class="footer-brand">
-      <a href="index.html" class="footer-logo" id="footer-logo" style="margin-bottom:var(--space-3);display:block"><div class="nav-logo-text" style="color:white"><div class="nav-logo-sub" style="color:var(--primary-light)">Samsun ÜÜniversitesi</div><div class="nav-logo-title" style="color:white">Yazılım Mühendisliği</div></div></a>
-      <p class="footer-brand-desc">Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü, dünya standartlarında yazılım mühendisleri yetiştirmeyi misyon edinmiş, MÜDEK akreditasyonlu bir bölümdür.</p>
-      <div class="footer-social"><a href="#" class="footer-social-link">𝕏</a><a href="#" class="footer-social-link">in</a><a href="#" class="footer-social-link">◎</a></div>
-    </div>
-    <div><div class="footer-col-title">Bölüm</div><div class="footer-links"><a href="hakkimizda.html">Hakkımızda</a><a href="kadro.html">Akademik Kadro</a><a href="laboratuvarlar.html">Laboratuvarlar</a><a href="projeler.html">Projeler</a></div></div>
-    <div><div class="footer-col-title">Eğitim</div><div class="footer-links"><a href="mufredat.html">Müfredat</a><a href="staj.html">Staj</a><a href="duyurular.html">Duyurular</a><a href="aday-ogÖğÖğrenci.html">Aday ÖğÖğÖğrenci</a></div></div>
-    <div><div class="footer-col-title">Bağlantılar</div><div class="footer-links"><a href="iletisim.html">İletişim</a><a href="https://samsun.edu.tr" target="_blank">Üniversite</a><a href="https://obs.samsun.edu.tr" target="_blank">OBS</a></div></div>
-  </div></div></div>
-  <div class="footer-bottom"><div class="container"><div class="footer-bottom-inner"><div>© 2026 Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü.</div><div class="footer-bottom-links"><a href="#">Gizlilik</a><a href="iletisim.html">İletişim</a></div></div></div></div>
-</footer>
-<script>
-  const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 10); });
-</script>
-</body>
-</html>
-
-
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Samsun Üniversitesi Yazılım Mühendisliği Bölümü'ne başvurmak isteyen aday öğrenciler için puan türleri, kontenjanlar, burslar ve kariyer bilgileri." />
+  <title>Aday Öğrenci — Yazılım Mühendisliği | Samsun Üniversitesi</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .admission-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark2) 50%, #0a1628 100%);
+      min-height: 70vh;
+      display:flex; align-items:center;
+      position: relative; overflow:hidden;
+      padding: var(--space-24) 0;
+    }
+    .admission-hero::before {
+      content:''; position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 40%, rgba(185,28,28,.18) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 15% 80%, rgba(13,148,136,.12) 0%, transparent 60%);
+    }
+    .admission-hero::after {
+      content:''; position:absolute; inset:0;
+      background:
+        linear-gradient(rgba(185,28,28,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(185,28,28,.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .score-card {
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:var(--radius-xl); padding:var(--space-8);
+      transition:var(--transition-base); text-align:center;
+    }
+    .score-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); border-color:var(--primary); }
+    .score-value { font-family:var(--font-display); font-size:var(--text-5xl); font-weight:800; color:var(--primary); letter-spacing:-0.04em; line-height:1; }
+    .score-label { font-size:var(--text-sm); color:var(--text-muted); margin-top:var(--space-2); }
+    .score-year { font-size:var(--text-xs); color:var(--text-muted); }
+
+    .why-item {
+      display:flex; gap:var(--space-5); align-items:flex-start;
+      padding:var(--space-6);
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:var(--radius-lg); transition:var(--transition-base);
+    }
+    .why-item:hover { border-color:var(--accent); box-shadow:var(--shadow-sm); transform:translateX(4px); }
+    .why-icon { font-size:28px; flex-shrink:0; }
+    .why-title { font-weight:700; font-size:var(--text-base); color:var(--text-primary); margin-bottom:var(--space-2); }
+    .why-text { font-size:var(--text-sm); color:var(--text-secondary); line-height:1.6; }
+
+    .career-card {
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:var(--radius-xl); padding:var(--space-8);
+      text-align:center; transition:var(--transition-base);
+    }
+    .career-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); }
+    .career-emoji { font-size:40px; margin-bottom:var(--space-4); }
+    .career-title { font-family:var(--font-display); font-size:var(--text-lg); font-weight:700; color:var(--text-primary); margin-bottom:var(--space-3); }
+    .career-salary { font-size:var(--text-sm); color:var(--accent); font-weight:600; margin-top:var(--space-3); }
+
+    .company-logo-strip {
+      display:flex; flex-wrap:wrap; gap:var(--space-4); justify-content:center; align-items:center;
+    }
+    .company-badge {
+      padding: var(--space-3) var(--space-6);
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:var(--radius-full);
+      font-size:var(--text-sm); font-weight:600;
+      color:var(--text-secondary); transition:var(--transition-fast);
+    }
+    .company-badge:hover { border-color:var(--primary); color:var(--primary); background:var(--primary-ultra); }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-links">
+      <a href="https://samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.89 9L12 4.58 20.11 9 12 13.42 3.89 9z"/></svg> Samsun Üniversitesi</a>
+      <a href="https://obs.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg> OBS</a>
+      <a href="https://uzem.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/></svg> UZEM</a>
+      <a href="http://eposta.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> E-Posta</a>
+    </div>
+    <div class="top-bar-right"><span>2025–2026 Akademik Yılı</span></div>
+  </div>
+</div>
+
+<header id="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" id="logo-link">
+      <div class="nav-logo-text">
+        <div class="nav-logo-title">Yazılım Mühendisliği</div>
+        <div class="nav-logo-sub">Samsun Üniversitesi</div>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html" class="nav-link">Ana Sayfa</a>
+      <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+      <a href="kadro.html" class="nav-link">Kadro</a>
+      <a href="mufredat.html" class="nav-link">Müfredat</a>
+      <a href="laboratuvarlar.html" class="nav-link">Laboratuvarlar</a>
+      <a href="duyurular.html" class="nav-link">Duyurular</a>
+      <a href="projeler.html" class="nav-link">Projeler</a>
+      <a href="staj.html" class="nav-link">Staj</a>
+      <a href="aday-ogrenci.html" class="nav-link active nav-cta">Aday Öğrenci</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ADMISSION HERO -->
+<section class="admission-hero" id="admission-hero">
+  <div class="container" style="position:relative;z-index:1">
+    <div style="text-align:center;max-width:800px;margin:0 auto">
+      <div class="hero-eyebrow" style="justify-content:center;margin-bottom:var(--space-6)">
+        <span class="hero-eyebrow-dot"></span>
+        2025–2026 Kayıt & Başvuru
+      </div>
+      <h1 style="font-family:var(--font-display);font-size:clamp(var(--text-4xl),7vw,var(--text-7xl));font-weight:800;color:white;letter-spacing:-0.04em;line-height:1.05;margin-bottom:var(--space-6)">
+        Geleceğini Buradan<br/>
+        <span style="background:linear-gradient(135deg,var(--primary-light),#FBBF24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">İnşa Et</span>
+      </h1>
+      <p style="font-size:var(--text-xl);color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:var(--space-10)">
+        Yazılım Mühendisliği Bölümümüz, seni geleceğin teknoloji dünyasına hazırlayacak en iyi programı sunmaktadır. Başvurun, hayalindeki kariyere ilk adımını at.
+      </p>
+      <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap">
+        <a href="https://yokatlas.yok.gov.tr/lisans.php?y=112771232" target="_blank" class="btn btn-primary btn-lg" id="yokatlas-btn">YÖK Atlas'ta İncele</a>
+        <a href="iletisim.html" class="btn btn-white btn-lg" id="contact-btn-hero">Bize Ulaş</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUAN VE KONTEYJAN -->
+<section class="section" id="quotas-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">YKS 2025</div>
+      <h2 class="section-title">Puan Türü & Kontenjan</h2>
+      <p class="section-desc">Güncel puan ve kontenjan bilgileri için YÖK Atlas sistemini ziyaret ediniz. Aşağıdaki veriler 2024 YKS'ye aittir.</p>
+    </div>
+    <div class="grid-4" id="score-cards">
+      <div class="score-card" id="score-1">
+        <div style="font-size:24px;margin-bottom:var(--space-4)"></div>
+        <div style="font-size:var(--text-sm);font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--space-3)">Puan Türü</div>
+        <div style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:800;color:var(--primary)">SAY</div>
+        <div class="score-label">Sayısal</div>
+      </div>
+      <div class="score-card" id="score-2">
+        <div style="font-size:24px;margin-bottom:var(--space-4)"></div>
+        <div style="font-size:var(--text-sm);font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--space-3)">2024 Taban Puanı</div>
+        <div class="score-value">378.5</div>
+        <div class="score-year">YKS 2024</div>
+      </div>
+      <div class="score-card" id="score-3">
+        <div style="font-size:24px;margin-bottom:var(--space-4)"></div>
+        <div style="font-size:var(--text-sm);font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--space-3)">2024 Tavan Puanı</div>
+        <div class="score-value">397.2</div>
+        <div class="score-year">YKS 2024</div>
+      </div>
+      <div class="score-card" id="score-4">
+        <div style="font-size:24px;margin-bottom:var(--space-4)"></div>
+        <div style="font-size:var(--text-sm);font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--space-3)">Yıllık Kontenjan</div>
+        <div class="score-value">100</div>
+        <div class="score-label">Öğrenci</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:var(--space-8);background:linear-gradient(135deg,var(--primary-ultra),rgba(13,148,136,.05));border-color:var(--primary)" id="atlas-info">
+      <div style="display:flex;align-items:center;gap:var(--space-4)">
+        <div style="font-size:32px"></div>
+        <div>
+          <div style="font-weight:700;color:var(--primary);margin-bottom:var(--space-2)">Güncel Bilgiler için YÖK Atlas'ı Ziyaret Edin</div>
+          <p style="color:var(--text-secondary);font-size:var(--text-sm)">Puan, kontenjan ve başarı sıralaması bilgileri her yıl güncellenmektedir. En doğru ve güncel bilgiye YÖK Atlas üzerinden ulaşabilirsiniz.</p>
+        </div>
+        <a href="https://yokatlas.yok.gov.tr/lisans.php?y=112771232" target="_blank" class="btn btn-primary" style="white-space:nowrap;flex-shrink:0" id="yokatlas-btn-2">YÖK Atlas →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BURSLAR -->
+<section class="section section-alt" id="scholarships-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Finansal Destek</div>
+      <h2 class="section-title">Burs & Destek Programları</h2>
+      <p class="section-desc">Üniversitemiz ve bölümümüzün sunduğu çeşitli burs ve destek programlarından yararlanabilirsiniz.</p>
+    </div>
+    <div class="grid-3" id="scholarship-grid">
+      <div class="card" id="sch-1">
+        <div class="card-icon card-icon-primary" style="font-size:28px"></div>
+        <h3 class="card-title">Başarı Bursu</h3>
+        <p class="card-text">YKS başarı sıralamasına göre tam veya kısmi burs imkânı. İlk %1, %5 ve %10 dilimlerine göre %100, %75 ve %50 burs verilmektedir.</p>
+        <div style="margin-top:var(--space-5)"><span class="badge badge-primary">%100'e kadar</span></div>
+      </div>
+      <div class="card" id="sch-2">
+        <div class="card-icon card-icon-accent" style="font-size:28px"></div>
+        <h3 class="card-title">KYK Yurt Bursu</h3>
+        <p class="card-text">Kredi ve Yurtlar Kurumu aracılığıyla burs ve kredi imkânları. KYK bursu için üniversite kayıt yaptırdıktan sonra başvurabilirsiniz.</p>
+        <div style="margin-top:var(--space-5)"><span class="badge badge-accent">KYK Başvurusu</span></div>
+      </div>
+      <div class="card" id="sch-3">
+        <div class="card-icon card-icon-dark" style="font-size:28px"></div>
+        <h3 class="card-title">Sektör Burs Programları</h3>
+        <p class="card-text">Arçelik, Microsoft Türkiye ve diğer teknoloji şirketlerinin bölümümüzle işbirliği kapsamında sunduğu özel burslardır.</p>
+        <div style="margin-top:var(--space-5)"><span class="badge badge-dark">Detaylar için İletişim</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEDEN BİZİ SEÇMELİSİN -->
+<section class="section" id="why-us-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Avantajlar</div>
+      <h2 class="section-title">Neden Bizi Seçmelisin?</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5)" id="why-grid">
+      <div class="why-item" id="why-1"><div class="why-icon"></div><div><div class="why-title">MÜDEK Akreditasyonu</div><div class="why-text">Uluslararası standartlarda mühendislik eğitimi garantisi.</div></div></div>
+      <div class="why-item" id="why-2"><div class="why-icon"></div><div><div class="why-title">Merkezi Konum</div><div class="why-text">Şehir merkezine yakın, ulaşımı kolay kampüs.</div></div></div>
+      <div class="why-item" id="why-3"><div class="why-icon"></div><div><div class="why-title">Genç & Dinamik Kadro</div><div class="why-text">Alanında uzman, yenilikçi yaklaşıma sahip öğretim üyeleri.</div></div></div>
+      <div class="why-item" id="why-4"><div class="why-icon"></div><div><div class="why-title">Modern Lab Altyapısı</div><div class="why-text">GPU destekli AI labaratuvarı, IoT ve güvenlik labları.</div></div></div>
+      <div class="why-item" id="why-5"><div class="why-icon"></div><div><div class="why-title">Yüksek İstihdam Oranı</div><div class="why-text">Mezunların %95'i ilk 6 ayda iş hayatına katılmaktadır.</div></div></div>
+      <div class="why-item" id="why-6"><div class="why-icon"></div><div><div class="why-title">Erasmus+ Hareketliliği</div><div class="why-text">Avrupa üniversiteleriyle aktif değişim programları.</div></div></div>
+      <div class="why-item" id="why-7"><div class="why-icon"></div><div><div class="why-title">Girişimcilik Ekosistemi</div><div class="why-text">Üniversite teknokenti ve hızlandırıcı programlarına erişim.</div></div></div>
+      <div class="why-item" id="why-8"><div class="why-icon"></div><div><div class="why-title">Başarı Bursları</div><div class="why-text">YKS başarınıza göre %100'e kadar öğrenim bursu imkânı.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- KARİYER -->
+<section class="section section-alt" id="career-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Kariyer Fırsatları</div>
+      <h2 class="section-title">Mezunlarımız Nerede Çalışıyor?</h2>
+      <p class="section-desc">Yazılım mühendisliği mezunları, Türkiye'nin en prestijli teknoloji şirketlerinde rol alıyor.</p>
+    </div>
+    <div class="company-logo-strip" id="company-strip" style="margin-bottom:var(--space-16)">
+      <div class="company-badge">Microsoft Türkiye</div>
+      <div class="company-badge">Trendyol</div>
+      <div class="company-badge">Getir</div>
+      <div class="company-badge">Arçelik</div>
+      <div class="company-badge">Turkcell</div>
+      <div class="company-badge">Logo Yazılım</div>
+      <div class="company-badge">Huawei Türkiye</div>
+      <div class="company-badge">Havelsan</div>
+      <div class="company-badge">Roketsan</div>
+      <div class="company-badge">PayCore</div>
+    </div>
+    <div class="grid-4" id="career-grid">
+      <div class="career-card" id="career-1">
+        <div class="career-emoji"></div>
+        <div class="career-title">Yazılım Geliştirici</div>
+        <p style="font-size:var(--text-sm);color:var(--text-secondary)">Full-stack, backend veya frontend geliştirici olarak teknoloji şirketlerinde kariyer.</p>
+        <div class="career-salary">⬆ Ortalama: 65K–120K TL/ay</div>
+      </div>
+      <div class="career-card" id="career-2">
+        <div class="career-emoji"></div>
+        <div class="career-title">AI/ML Mühendisi</div>
+        <p style="font-size:var(--text-sm);color:var(--text-secondary)">Yapay zeka ve makine öğrenmesi modelleri geliştiren mühendis rolü.</p>
+        <div class="career-salary">⬆ Ortalama: 80K–150K TL/ay</div>
+      </div>
+      <div class="career-card" id="career-3">
+        <div class="career-emoji"></div>
+        <div class="career-title">Siber Güvenlik Uzmanı</div>
+        <p style="font-size:var(--text-sm);color:var(--text-secondary)">Kurumsal güvenlik açıklarını tespit eden ve önleyen güvenlik profesyoneli.</p>
+        <div class="career-salary">⬆ Ortalama: 75K–140K TL/ay</div>
+      </div>
+      <div class="career-card" id="career-4">
+        <div class="career-emoji"></div>
+        <div class="career-title">Cloud & DevOps Mühendisi</div>
+        <p style="font-size:var(--text-sm);color:var(--text-secondary)">Bulut altyapısı ve CI/CD süreçlerini yöneten platform mühendisleri.</p>
+        <div class="career-salary">⬆ Ortalama: 85K–160K TL/ay</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÖĞRENCİ YORUMLARI -->
+<section class="section" id="testimonials-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Öğrenci Deneyimleri</div>
+      <h2 class="section-title">Öğrencilerimiz Ne Diyor?</h2>
+    </div>
+    <div class="grid-3" id="testimonial-grid">
+      <div class="card" id="test-1">
+        <div style="font-size:24px;margin-bottom:var(--space-4);color:var(--primary)">❝</div>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-bottom:var(--space-6);font-style:italic">"Bölümümüzdeki AI laboratuvarı sayesinde yapay zeka alanındaki projelerimizi gerçek GPU altyapısında geliştirebildik. Bu deneyim staj sürecimde büyük fark yarattı."</p>
+        <div style="display:flex;align-items:center;gap:var(--space-3)">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">AK</div>
+          <div>
+            <div style="font-weight:600;font-size:var(--text-sm)">Ali Kara</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted)">3. Sınıf Öğrencisi</div>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="test-2">
+        <div style="font-size:24px;margin-bottom:var(--space-4);color:var(--primary)">❝</div>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-bottom:var(--space-6);font-style:italic">"Staj coordinatörümüz sayesinde tercih ettiğim şirkette staj yaptım. Hocalarımızın endüstri bağlantıları gerçekten çok güçlü."</p>
+        <div style="display:flex;align-items:center;gap:var(--space-3)">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">MY</div>
+          <div>
+            <div style="font-weight:600;font-size:var(--text-sm)">Merve Yurt</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted)">4. Sınıf Öğrencisi</div>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="test-3">
+        <div style="font-size:24px;margin-bottom:var(--space-4);color:var(--primary)">❝</div>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-bottom:var(--space-6);font-style:italic">"Erasmus programıyla Polonya'da bir dönem okudum. Bölümümüz bu konuda çok destekleyici ve süreç oldukça sorunsuz ilerledi."</p>
+        <div style="display:flex;align-items:center;gap:var(--space-3)">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#7C3AED,#4C1D95);display:flex;align-items:center;justify-content:center;color:white;font-weight:700">SK</div>
+          <div>
+            <div style="font-weight:600;font-size:var(--text-sm)">Sena Kurt</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted)">Mezun · 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip" id="cta-section">
+  <div class="container">
+    <h2>Geleceğine Yatırım Yap</h2>
+    <p>Samsun Üniversitesi Yazılım Mühendisliği Bölümü hakkında daha fazla bilgi almak için bizimle iletişime geç.</p>
+    <div class="cta-buttons">
+      <a href="https://yokatlas.yok.gov.tr/lisans.php?y=112771232" target="_blank" class="btn btn-primary btn-lg">YÖK Atlas'ta İncele</a>
+      <a href="iletisim.html" class="btn btn-white btn-lg">Bize Sor</a>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer">
+  <div class="footer-top"><div class="container"><div class="footer-grid">
+    <div class="footer-brand"><a href="index.html" class="footer-logo"><div class="footer-logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z" fill="white"/></svg></div><div><div class="footer-logo-text">Yazılım Mühendisliği</div><div class="footer-logo-sub">Samsun Üniversitesi</div></div></a><p class="footer-brand-desc">MÜDEK akreditasyonlu yazılım mühendisliği eğitimi.</p><div class="footer-social"><a href="#" class="footer-social-link">𝕏</a><a href="#" class="footer-social-link">in</a><a href="#" class="footer-social-link">◎</a></div></div>
+    <div><div class="footer-col-title">Bölüm</div><div class="footer-links"><a href="hakkimizda.html">Hakkımızda</a><a href="kadro.html">Akademik Kadro</a><a href="laboratuvarlar.html">Laboratuvarlar</a><a href="projeler.html">Projeler</a></div></div>
+    <div><div class="footer-col-title">Eğitim</div><div class="footer-links"><a href="mufredat.html">Müfredat</a><a href="staj.html">Staj</a><a href="duyurular.html">Duyurular</a><a href="aday-ogrenci.html">Aday Öğrenci</a></div></div>
+    <div><div class="footer-col-title">Bağlantılar</div><div class="footer-links"><a href="iletisim.html">İletişim</a><a href="https://samsun.edu.tr" target="_blank">Üniversite</a><a href="https://obs.samsun.edu.tr" target="_blank">OBS</a></div></div>
+  </div></div></div>
+  <div class="footer-bottom"><div class="container"><div class="footer-bottom-inner"><div>© 2026 Samsun Üniversitesi Yazılım Mühendisliği Bölümü.</div><div class="footer-bottom-links"><a href="#">Gizlilik</a><a href="iletisim.html">İletişim</a></div></div></div></div>
+</footer>
+<script>
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 10); });
+</script>
+</body>
+</html>

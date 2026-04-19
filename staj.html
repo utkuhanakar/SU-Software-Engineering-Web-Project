@@ -1,341 +1,340 @@
-﻿<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü staj bilgileri, başvuru süreci, SSS ve onaylı işyerleri." />
-  <title>Staj — Yazılım Mühendisliği | Samsun ÜÜniversitesi</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .faq-item {
-      background:var(--bg-card); border:1px solid var(--border);
-      border-radius:var(--radius-lg); overflow:hidden;
-      margin-bottom:var(--space-3); transition:var(--transition-base);
-    }
-    .faq-item:hover { border-color:var(--primary); }
-    .faq-question {
-      display:flex; align-items:center; justify-content:space-between;
-      padding:var(--space-5) var(--space-6); cursor:pointer;
-      transition:var(--transition-fast);
-    }
-    .faq-question:hover { background:var(--primary-ultra); }
-    .faq-question h3 { font-size:var(--text-base); font-weight:600; color:var(--text-primary); }
-    .faq-toggle { width:28px; height:28px; border-radius:50%; background:var(--bg-section); border:1.5px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; transition:var(--transition-fast); color:var(--text-muted); }
-    .faq-item.open .faq-toggle { background:var(--primary); border-color:var(--primary); color:white; transform:rotate(45deg); }
-    .faq-answer { display:none; padding:0 var(--space-6) var(--space-5); font-size:var(--text-base); color:var(--text-secondary); line-height:1.7; }
-    .faq-item.open .faq-answer { display:block; }
-    .faq-item.open .faq-question { background:var(--primary-ultra); }
-
-    .req-item {
-      display:flex; align-items:flex-start; gap:var(--space-4);
-      padding:var(--space-5) var(--space-6);
-      background:var(--bg-card); border:1px solid var(--border);
-      border-radius:var(--radius-lg); transition:var(--transition-base);
-    }
-    .req-item:hover { border-color:var(--accent); box-shadow:var(--shadow-sm); }
-    .req-num { width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:white; font-weight:800; font-family:var(--font-display); font-size:var(--text-base); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .req-text h4 { font-weight:600; color:var(--text-primary); margin-bottom:var(--space-1); }
-    .req-text p { font-size:var(--text-sm); color:var(--text-secondary); line-height:1.6; }
-  </style>
-</head>
-<body>
-
-<div class="top-bar">
-  <div class="top-bar-inner">
-    <div class="top-bar-links">
-      <a href="https://samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7L2 14l10 5 10-5-10-5zm0 7L2 21l10 5 10-5-10-5z"/></svg> Samsun ÜÜniversitesi</a>
-      <a href="https://obs.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg> OBS</a>
-      <a href="https://uzem.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/></svg> UZEM</a>
-      <a href="http://eposta.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> E-Posta</a>
-    </div>
-    <div class="top-bar-right"><span>2025–2026 Akademik Yılı</span></div>
-  </div>
-</div>
-
-<header id="site-header">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" id="logo-link"><div class="nav-logo-text"><div class="nav-logo-sub">Samsun ÜÜniversitesi</div><div class="nav-logo-title">Yazılım Mühendisliği</div></div></a>
-    <nav>
-      <a href="index.html" class="nav-link">Ana Sayfa</a>
-      <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
-      <a href="kadro.html" class="nav-link">Kadro</a>
-      <a href="mufredat.html" class="nav-link">Müfredat</a>
-      <a href="laboratuvarlar.html" class="nav-link">Laboratuvarlar</a>
-      <a href="duyurular.html" class="nav-link">Duyurular</a>
-      <a href="projeler.html" class="nav-link">Projeler</a>
-      <a href="staj.html" class="nav-link active">Staj</a>
-      <a href="aday-ogÖğÖğrenci.html" class="nav-link nav-cta">Aday ÖğÖğÖğrenci</a>
-    </nav>
-  </div>
-</header>
-
-<section class="page-hero">
-  <div class="page-hero-inner">
-    <div class="breadcrumb">
-      <a href="index.html">Ana Sayfa</a>
-      <span class="breadcrumb-sep">›</span>
-      <span class="breadcrumb-current">Staj</span>
-    </div>
-    <div class="page-hero-badge"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zM10 4h4v2h-4V4z"/></svg> Kariyer Deneyimi</div>
-    <h1>Staj <span>Bilgileri</span></h1>
-    <p class="page-hero-desc">Yazılım mühendisliği stajınız, kariyer yolculuğunuzun en kritik adımlarından biridir. Başvuru süreci, gereksinimler ve SSS bilgilerine buradan ulaşabilirsiniz.</p>
-  </div>
-</section>
-
-<!-- GENEL BİLGİ -->
-<section class="section section-alt" id="internship-overview">
-  <div class="container">
-    <div class="grid-4" id="internship-stats">
-      <div class="stat-box card">
-        <div class="stat-value">30</div>
-        <div class="stat-label">İş Günü (Staj I)</div>
-      </div>
-      <div class="stat-box card">
-        <div class="stat-value">30</div>
-        <div class="stat-label">İş Günü (Staj II)</div>
-      </div>
-      <div class="stat-box card">
-        <div class="stat-value">3.</div>
-        <div class="stat-label">Yıldan İtibaren (Staj I)</div>
-      </div>
-      <div class="stat-box card">
-        <div class="stat-value">%95</div>
-        <div class="stat-label">İşe Dönüşüm Oranı</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BAŞVURU SÜRECİ -->
-<section class="section" id="internship-process">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">Adım Adım Süreç</div>
-      <h2 class="section-title">Staj Başvurusu Nasıl Yapılır?</h2>
-      <p class="section-desc">Staj başvuru sürecinizi adım adım takip edin ve herhangi bir aşamada bölüm danışmanınızdan destek alın.</p>
-    </div>
-
-    <div style="display:flex;flex-direction:column;gap:var(--space-5)" id="steps-list">
-      <div class="step-card" id="step-1">
-        <div class="step-number">01</div>
-        <div class="step-content">
-          <div class="step-title">İşyeri Seçimi ve Onayı</div>
-          <div class="step-text">Staj yapmak istediğiniz işyerini belirleyin. Bölümümüzün onaylı işyerleri listesinden seçim yapabilir ya da yeni bir işyeri için danışman onayı alabilirsiniz. İşyerinin yazılım mühendisliği ile ilgili bir departmana sahip olması gerekmektedir.</div>
-        </div>
-      </div>
-      <div class="step-card" id="step-2">
-        <div class="step-number">02</div>
-        <div class="step-content">
-          <div class="step-title">Başvuru Formunu Tamamlayın</div>
-          <div class="step-text">Bölüm sekreteryasından veya bölüm web sitesinden staj başvuru formunu temin edin. Formu eksiksiz doldurun ve danışman öğretim üyenize imzalatın. Form, belirlenen son başvuru tarihinden en az 2 hafta önce teslim edilmelidir.</div>
-        </div>
-      </div>
-      <div class="step-card" id="step-3">
-        <div class="step-number">03</div>
-        <div class="step-content">
-          <div class="step-title">SGK ve Sigorta İşlemleri</div>
-          <div class="step-text">Bölüm sekreteryası aracılığıyla SGK iş kazası sigortanız düzenlenecektir. Stajınız boyunca bu sigorta kapsamında korunacaksınız. İşyeriniz ek sigorta talep ettiği hallerde üniversite tarafından düzenleme yapılır.</div>
-        </div>
-      </div>
-      <div class="step-card" id="step-4">
-        <div class="step-number">04</div>
-        <div class="step-content">
-          <div class="step-title">Staj Defteri Tutun</div>
-          <div class="step-text">Stajınız boyunca her iş günü için staj defterinizi (günlük rapor) eksiksiz tutun. Staj defterinde gün bazında yapılan işler, öğrenilenler ve gözlemler yer almalıdır. Staj defteri el yazısıyla veya bilgisayarda hazırlanabilir.</div>
-        </div>
-      </div>
-      <div class="step-card" id="step-5">
-        <div class="step-number">05</div>
-        <div class="step-content">
-          <div class="step-title">Değerlendirme ve Final Raporu</div>
-          <div class="step-text">Staj bitiminde işyeri yetkilisi tarafından sealed (mühürlü) değerlendirme formu doldurulmalı ve bölüme teslim edilmelidir. ÖğÖğÖğrenci tarafından staj sonuç raporu hazırlanarak 1 hafta içinde bölüm sekreteryasına teslim edilir.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ŞARTLAR -->
-<section class="section section-alt" id="requirements-section">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-12);align-items:start">
-      <div>
-        <div class="section-label" style="justify-content:flex-start">Gereksinimler</div>
-        <h2 class="section-title" style="text-align:left">Staj Şartları</h2>
-        <p style="color:var(--text-secondary);line-height:1.75;margin-bottom:var(--space-8)">Staj başvurusu yapabilmek için aşağıdaki şartların tamamının sağlanmış olması gerekmektedir.</p>
-        <div style="display:flex;flex-direction:column;gap:var(--space-4)" id="requirements-list">
-          <div class="req-item">
-            <div class="req-num">1</div>
-            <div class="req-text">
-              <h4>ÖğÖğÖğrenci Statüsü</h4>
-              <p>Aktif kayıtlı bir Samsun ÜÜniversitesi Yazılım Mühendisliği öğÖğÖğrencisi olmak.</p>
-            </div>
-          </div>
-          <div class="req-item">
-            <div class="req-num">2</div>
-            <div class="req-text">
-              <h4>Sınıf Şartı (Staj I)</h4>
-              <p>Staj I için en az 3. sınıf öğÖğÖğrencisi olmak ve 60 AKTS'yi tamamlamış olmak.</p>
-            </div>
-          </div>
-          <div class="req-item">
-            <div class="req-num">3</div>
-            <div class="req-text">
-              <h4>Sınıf Şartı (Staj II)</h4>
-              <p>Staj II için en az 4. sınıf öğÖğÖğrencisi olmak ve Staj I'i tamamlamış olmak.</p>
-            </div>
-          </div>
-          <div class="req-item">
-            <div class="req-num">4</div>
-            <div class="req-text">
-              <h4>Disiplin Cezası</h4>
-              <p>Herhangi bir disiplin cezası bulunmamak.</p>
-            </div>
-          </div>
-          <div class="req-item">
-            <div class="req-num">5</div>
-            <div class="req-text">
-              <h4>İşyeri Uygunluğu</h4>
-              <p>Staj yapılacak işyerinin yazılım geliştirme veya BT departmanına sahip olması.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="section-label" style="justify-content:flex-start">Önemli Tarihler</div>
-        <h2 class="section-title" style="text-align:left">Staj Takvimi</h2>
-        <div class="card" id="internship-calendar">
-          <table style="width:100%;border-collapse:collapse">
-            <tbody>
-              <tr style="border-bottom:1px solid var(--border-light)">
-                <td style="padding:var(--space-4);font-weight:600;color:var(--primary)">1 Nisan</td>
-                <td style="padding:var(--space-4);font-size:var(--text-sm);color:var(--text-secondary)">Yaz stajı başvuruları açılır</td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--border-light)">
-                <td style="padding:var(--space-4);font-weight:600;color:var(--primary)">30 Nisan</td>
-                <td style="padding:var(--space-4);font-size:var(--text-sm);color:var(--text-secondary)">Son başvuru tarihi</td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--border-light)">
-                <td style="padding:var(--space-4);font-weight:600;color:var(--primary)">10 Mayıs</td>
-                <td style="padding:var(--space-4);font-size:var(--text-sm);color:var(--text-secondary)">Onay sonuççları açıklanır</td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--border-light)">
-                <td style="padding:var(--space-4);font-weight:600;color:var(--primary)">16 Haz – 5 Eyl</td>
-                <td style="padding:var(--space-4);font-size:var(--text-sm);color:var(--text-secondary)">Yaz stajı dönemi</td>
-              </tr>
-              <tr>
-                <td style="padding:var(--space-4);font-weight:600;color:var(--primary)">12 Eylül</td>
-                <td style="padding:var(--space-4);font-size:var(--text-sm);color:var(--text-secondary)">Staj defteri teslim son günü</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="card" style="margin-top:var(--space-5);background:linear-gradient(135deg,var(--primary),var(--primary-dark));border:none" id="internship-contact-card">
-          <h3 style="color:white;margin-bottom:var(--space-3);font-family:var(--font-display)">Staj Koordinatörü</h3>
-          <p style="color:rgba(255,255,255,.8);font-size:var(--text-sm);margin-bottom:var(--space-4)">Staj süreciyle ilgili tüm sorularınız için bölüm staj koordinatörüne ulaşabilirsiniz.</p>
-          <div style="color:rgba(255,255,255,.9);font-size:var(--text-sm);display:flex;align-items:center;gap:8px"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> staj@samsun.edu.tr</div>
-          <div style="color:rgba(255,255,255,.9);font-size:var(--text-sm);margin-top:var(--space-2);display:flex;align-items:center;gap:8px"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02A11.36 11.36 0 018.58 4c0-.55-.45-1-1-1H4.03C3.47 3 3 3.47 3 4.02 3 13.39 10.61 21 19.97 21c.55 0 1.02-.48 1.02-1.03v-3.59c0-.55-.45-1-1-1z"/></svg> 0362 XXX XX XX</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SSS -->
-<section class="section" id="faq-section">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">Sıkça Sorulan Sorular</div>
-      <h2 class="section-title">Staj SSS</h2>
-      <p class="section-desc">Staj sürecinde en çok sorulan soruların cevaplarını aşağıda bulabilirsiniz.</p>
-    </div>
-    <div style="max-width:800px;margin:0 auto" id="faq-list">
-
-      <div class="faq-item" id="faq-1">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h3>Staj yabancı bir şirkette yapılabilir mi?</h3>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-answer">Evet, yurt dışında yazılım geliştirme veya BT departmanına sahip bir şirkette staj yapılabilir. Bu durumda staj başvuru formunun yanı sıra ek belgeler (işyeri bilgileri, departman teyidi) gerekebilir. Ayrıntılı bilgi için staj koordinatörünüzle iletişime geçin.</div>
-      </div>
-
-      <div class="faq-item" id="faq-2">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h3>Staj ücreti zorunlu mu?</h3>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-answer">Hayır, staj ücreti zorunlu değildir; ancak birçok şirket gönüllü olarak stajyer ücreti ya da yol/yemek yardımı sunmaktadır. Ücretli veya ücretsiz her iki staj seçeneği de geçerlidir.</div>
-      </div>
-
-      <div class="faq-item" id="faq-3">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h3>Staj dönemi ara sınav tarihlerine denk gelirse ne yapılır?</h3>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-answer">Staj dönemi ile sınav tarihleri çakışması durumunda öğÖğÖğrencinin ilgili sınav için izin talebinde bulunması gerekmektedir. Bu tür durumlar için şirketle önceden mutabakat sağlanması tavsiye edilir.</div>
-      </div>
-
-      <div class="faq-item" id="faq-4">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h3>Uzaktan (remote) staj kabul ediliyor mu?</h3>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-answer">2022 yılından itibaren uzaktan staj kabul edilmektedir. Uzaktan stajlarda da aynı belgeler ve değerlendirme kriterleri geçerlidir. İşyerinin çalışma programı ve onaylı izleme yöntemi bölüme bildirilmelidir.</div>
-      </div>
-
-      <div class="faq-item" id="faq-5">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h3>Staj defteri hangi formatta hazırlanmalıdır?</h3>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-answer">Staj defteri, bölümün belirlediği standart format kullanılarak her iş günü için doldurulmalıdır. Format bilgisine bölüm web sitesinden veya sekreteryadan ulaşabilirsiniz. Defterler el yazısıyla veya basılı olarak kabul edilmektedir.</div>
-      </div>
-
-      <div class="faq-item" id="faq-6">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h3>Hangi sektörler staj için geçerli sayılıyor?</h3>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-answer">Yazılım geliştirme, web/mobil uygulama, siber güvenlik, yapay zeka & veri bilimi, bulut altyapısı, DevOps, oyun geliştirme ve fintech gibi alanlarda staj yapılabilir. İmalat sanayi, perakende gibi sektörlerin BT birimleri de kabul görmektedir.</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="cta-strip" id="cta-section">
-  <div class="container">
-    <h2>Staj Başvurunuzu Yapın</h2>
-    <p>Yaz dönemi staj başvurusu için son tarih 30 Nisan 2026. Hemen başvurun ve kariyerinizi inşa etmeye başlayın.</p>
-    <div class="cta-buttons">
-      <a href="iletisim.html" class="btn btn-primary btn-lg">Staj Koordinatörüne Ulaş</a>
-      <a href="duyurular.html" class="btn btn-white btn-lg">Duyurular</a>
-    </div>
-  </div>
-</section>
-
-<footer id="site-footer">
-  <div class="footer-top"><div class="container"><div class="footer-grid">
-    <div class="footer-brand">
-      <a href="index.html" class="footer-logo" id="footer-logo" style="margin-bottom:var(--space-3);display:block"><div class="nav-logo-text" style="color:white"><div class="nav-logo-sub" style="color:var(--primary-light)">Samsun ÜÜniversitesi</div><div class="nav-logo-title" style="color:white">Yazılım Mühendisliği</div></div></a>
-      <p class="footer-brand-desc">Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü, dünya standartlarında yazılım mühendisleri yetiştirmeyi misyon edinmiş, MÜDEK akreditasyonlu bir bölümdür.</p>
-      <div class="footer-social"><a href="#" class="footer-social-link">𝕏</a><a href="#" class="footer-social-link">in</a><a href="#" class="footer-social-link">◎</a></div>
-    </div>
-    <div><div class="footer-col-title">Bölüm</div><div class="footer-links"><a href="hakkimizda.html">Hakkımızda</a><a href="kadro.html">Akademik Kadro</a><a href="laboratuvarlar.html">Laboratuvarlar</a><a href="projeler.html">Projeler</a></div></div>
-    <div><div class="footer-col-title">Eğitim</div><div class="footer-links"><a href="mufredat.html">Müfredat</a><a href="staj.html">Staj</a><a href="duyurular.html">Duyurular</a><a href="aday-ogÖğÖğrenci.html">Aday ÖğÖğÖğrenci</a></div></div>
-    <div><div class="footer-col-title">Bağlantılar</div><div class="footer-links"><a href="iletisim.html">İletişim</a><a href="https://samsun.edu.tr" target="_blank">Üniversite</a><a href="https://obs.samsun.edu.tr" target="_blank">OBS</a></div></div>
-  </div></div></div>
-  <div class="footer-bottom"><div class="container"><div class="footer-bottom-inner"><div>© 2026 Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü.</div><div class="footer-bottom-links"><a href="#">Gizlilik</a><a href="iletisim.html">İletişim</a></div></div></div></div>
-</footer>
-<script>
-  const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 10); });
-  function toggleFaq(el) {
-    const item = el.closest('.faq-item');
-    item.classList.toggle('open');
-  }
-</script>
-</body>
-</html>
-
-
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Samsun Üniversitesi Yazılım Mühendisliği Bölümü staj bilgileri, başvuru süreci, SSS ve onaylı işyerleri." />
+  <title>Staj — Yazılım Mühendisliği | Samsun Üniversitesi</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .faq-item {
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:var(--radius-lg); overflow:hidden;
+      margin-bottom:var(--space-3); transition:var(--transition-base);
+    }
+    .faq-item:hover { border-color:var(--primary); }
+    .faq-question {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:var(--space-5) var(--space-6); cursor:pointer;
+      transition:var(--transition-fast);
+    }
+    .faq-question:hover { background:var(--primary-ultra); }
+    .faq-question h3 { font-size:var(--text-base); font-weight:600; color:var(--text-primary); }
+    .faq-toggle { width:28px; height:28px; border-radius:50%; background:var(--bg-section); border:1.5px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; transition:var(--transition-fast); color:var(--text-muted); }
+    .faq-item.open .faq-toggle { background:var(--primary); border-color:var(--primary); color:white; transform:rotate(45deg); }
+    .faq-answer { display:none; padding:0 var(--space-6) var(--space-5); font-size:var(--text-base); color:var(--text-secondary); line-height:1.7; }
+    .faq-item.open .faq-answer { display:block; }
+    .faq-item.open .faq-question { background:var(--primary-ultra); }
+
+    .req-item {
+      display:flex; align-items:flex-start; gap:var(--space-4);
+      padding:var(--space-5) var(--space-6);
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:var(--radius-lg); transition:var(--transition-base);
+    }
+    .req-item:hover { border-color:var(--accent); box-shadow:var(--shadow-sm); }
+    .req-num { width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:white; font-weight:800; font-family:var(--font-display); font-size:var(--text-base); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .req-text h4 { font-weight:600; color:var(--text-primary); margin-bottom:var(--space-1); }
+    .req-text p { font-size:var(--text-sm); color:var(--text-secondary); line-height:1.6; }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-links">
+      <a href="https://samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.89 9L12 4.58 20.11 9 12 13.42 3.89 9z"/></svg> Samsun Üniversitesi</a>
+      <a href="https://obs.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg> OBS</a>
+      <a href="https://uzem.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/></svg> UZEM</a>
+      <a href="http://eposta.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> E-Posta</a>
+    </div>
+    <div class="top-bar-right"><span>2025–2026 Akademik Yılı</span></div>
+  </div>
+</div>
+
+<header id="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" id="logo-link">
+      <div class="nav-logo-text">
+        <div class="nav-logo-title">Yazılım Mühendisliği</div>
+        <div class="nav-logo-sub">Samsun Üniversitesi</div>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html" class="nav-link">Ana Sayfa</a>
+      <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+      <a href="kadro.html" class="nav-link">Kadro</a>
+      <a href="mufredat.html" class="nav-link">Müfredat</a>
+      <a href="laboratuvarlar.html" class="nav-link">Laboratuvarlar</a>
+      <a href="duyurular.html" class="nav-link">Duyurular</a>
+      <a href="projeler.html" class="nav-link">Projeler</a>
+      <a href="staj.html" class="nav-link active">Staj</a>
+      <a href="aday-ogrenci.html" class="nav-link nav-cta">Aday Öğrenci</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Ana Sayfa</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Staj</span>
+    </div>
+    <div class="page-hero-badge">Kariyer Planlama</div>
+    <h1>Staj <span>Bilgileri</span></h1>
+    <p class="page-hero-desc">Yazılım mühendisliği stajınız, kariyer yolculuğunuzun en kritik adımlarından biridir. Başvuru süreci, gereksinimler ve SSS bilgilerine buradan ulaşabilirsiniz.</p>
+  </div>
+</section>
+
+<!-- GENEL BİLGİ -->
+<section class="section section-alt" id="internship-overview">
+  <div class="container">
+    <div class="grid-4" id="internship-stats">
+      <div class="stat-box card">
+        <div class="stat-value">30</div>
+        <div class="stat-label">İş Günü (Staj I)</div>
+      </div>
+      <div class="stat-box card">
+        <div class="stat-value">30</div>
+        <div class="stat-label">İş Günü (Staj II)</div>
+      </div>
+      <div class="stat-box card">
+        <div class="stat-value">3.</div>
+        <div class="stat-label">Yıldan İtibaren (Staj I)</div>
+      </div>
+      <div class="stat-box card">
+        <div class="stat-value">%95</div>
+        <div class="stat-label">İşe Dönüşüm Oranı</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAŞVURU SÜRECİ -->
+<section class="section" id="internship-process">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Adım Adım Süreç</div>
+      <h2 class="section-title">Staj Başvurusu Nasıl Yapılır?</h2>
+      <p class="section-desc">Staj başvuru sürecinizi adım adım takip edin ve herhangi bir aşamada bölüm danışmanınızdan destek alın.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:var(--space-5)" id="steps-list">
+      <div class="step-card" id="step-1">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <div class="step-title">İşyeri Seçimi ve Onayı</div>
+          <div class="step-text">Staj yapmak istediğiniz işyerini belirleyin. Bölümümüzün onaylı işyerleri listesinden seçim yapabilir ya da yeni bir işyeri için danışman onayı alabilirsiniz. İşyerinin yazılım mühendisliği ile ilgili bir departmana sahip olması gerekmektedir.</div>
+        </div>
+      </div>
+      <div class="step-card" id="step-2">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <div class="step-title">Başvuru Formunu Tamamlayın</div>
+          <div class="step-text">Bölüm sekreteryasından veya bölüm web sitesinden staj başvuru formunu temin edin. Formu eksiksiz doldurun ve danışman öğretim üyenize imzalatın. Form, belirlenen son başvuru tarihinden en az 2 hafta önce teslim edilmelidir.</div>
+        </div>
+      </div>
+      <div class="step-card" id="step-3">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <div class="step-title">SGK ve Sigorta İşlemleri</div>
+          <div class="step-text">Bölüm sekreteryası aracılığıyla SGK iş kazası sigortanız düzenlenecektir. Stajınız boyunca bu sigorta kapsamında korunacaksınız. İşyeriniz ek sigorta talep ettiği hallerde üniversite tarafından düzenleme yapılır.</div>
+        </div>
+      </div>
+      <div class="step-card" id="step-4">
+        <div class="step-number">04</div>
+        <div class="step-content">
+          <div class="step-title">Staj Defteri Tutun</div>
+          <div class="step-text">Stajınız boyunca her iş günü için staj defterinizi (günlük rapor) eksiksiz tutun. Staj defterinde gün bazında yapılan işler, öğrenilenler ve gözlemler yer almalıdır. Staj defteri el yazısıyla veya bilgisayarda hazırlanabilir.</div>
+        </div>
+      </div>
+      <div class="step-card" id="step-5">
+        <div class="step-number">05</div>
+        <div class="step-content">
+          <div class="step-title">Değerlendirme ve Final Raporu</div>
+          <div class="step-text">Staj bitiminde işyeri yetkilisi tarafından sealed (mühürlü) değerlendirme formu doldurulmalı ve bölüme teslim edilmelidir. Öğrenci tarafından staj sonu raporu hazırlanarak 1 hafta içinde bölüm sekreteryasına teslim edilir.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ŞARTLAR -->
+<section class="section section-alt" id="requirements-section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-12);align-items:start">
+      <div>
+        <div class="section-label" style="justify-content:flex-start">Gereksinimler</div>
+        <h2 class="section-title" style="text-align:left">Staj Şartları</h2>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-bottom:var(--space-8)">Staj başvurusu yapabilmek için aşağıdaki şartların tamamının sağlanmış olması gerekmektedir.</p>
+        <div style="display:flex;flex-direction:column;gap:var(--space-4)" id="requirements-list">
+          <div class="req-item">
+            <div class="req-num">1</div>
+            <div class="req-text">
+              <h4>Öğrenci Statüsü</h4>
+              <p>Aktif kayıtlı bir Samsun Üniversitesi Yazılım Mühendisliği öğrencisi olmak.</p>
+            </div>
+          </div>
+          <div class="req-item">
+            <div class="req-num">2</div>
+            <div class="req-text">
+              <h4>Sınıf Şartı (Staj I)</h4>
+              <p>Staj I için en az 3. sınıf öğrencisi olmak ve 60 AKTS'yi tamamlamış olmak.</p>
+            </div>
+          </div>
+          <div class="req-item">
+            <div class="req-num">3</div>
+            <div class="req-text">
+              <h4>Sınıf Şartı (Staj II)</h4>
+              <p>Staj II için en az 4. sınıf öğrencisi olmak ve Staj I'i tamamlamış olmak.</p>
+            </div>
+          </div>
+          <div class="req-item">
+            <div class="req-num">4</div>
+            <div class="req-text">
+              <h4>Disiplin Cezası</h4>
+              <p>Herhangi bir disiplin cezası bulunmamak.</p>
+            </div>
+          </div>
+          <div class="req-item">
+            <div class="req-num">5</div>
+            <div class="req-text">
+              <h4>İşyeri Uygunluğu</h4>
+              <p>Staj yapılacak işyerinin yazılım geliştirme veya BT departmanına sahip olması.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label" style="justify-content:flex-start">Önemli Tarihler</div>
+        <h2 class="section-title" style="text-align:left">Staj Takvimi</h2>
+        <div class="card" id="internship-calendar">
+          <table style="width:100%;border-collapse:collapse">
+            <tbody>
+              <tr style="border-bottom:1px solid var(--border-light)">
+                <td style="padding:var(--space-4);font-weight:600;color:var(--primary)">1 Nisan</td>
+                <td style="padding:var(--space-4);font-size:var(--text-sm);color:var(--text-secondary)">Yaz stajı başvuruları açılır</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border-light)">
+                <td style="padding:var(--space-4);font-weight:600;color:var(--primary)">30 Nisan</td>
+                <td style="padding:var(--space-4);font-size:var(--text-sm);color:var(--text-secondary)">Son başvuru tarihi</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border-light)">
+                <td style="padding:var(--space-4);font-weight:600;color:var(--primary)">10 Mayıs</td>
+                <td style="padding:var(--space-4);font-size:var(--text-sm);color:var(--text-secondary)">Onay sonuçları açıklanır</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border-light)">
+                <td style="padding:var(--space-4);font-weight:600;color:var(--primary)">16 Haz – 5 Eyl</td>
+                <td style="padding:var(--space-4);font-size:var(--text-sm);color:var(--text-secondary)">Yaz stajı dönemi</td>
+              </tr>
+              <tr>
+                <td style="padding:var(--space-4);font-weight:600;color:var(--primary)">12 Eylül</td>
+                <td style="padding:var(--space-4);font-size:var(--text-sm);color:var(--text-secondary)">Staj defteri teslim son günü</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card" style="margin-top:var(--space-5);background:linear-gradient(135deg,var(--primary),var(--primary-dark));border:none" id="internship-contact-card">
+          <h3 style="color:white;margin-bottom:var(--space-3);font-family:var(--font-display)">Staj Koordinatörü</h3>
+          <p style="color:rgba(255,255,255,.8);font-size:var(--text-sm);margin-bottom:var(--space-4)">Staj süreciyle ilgili tüm sorularınız için bölüm staj koordinatörüne ulaşabilirsiniz.</p>
+          <div style="color:rgba(255,255,255,.9);font-size:var(--text-sm)">📧 staj@samsun.edu.tr</div>
+          <div style="color:rgba(255,255,255,.9);font-size:var(--text-sm);margin-top:var(--space-2)">📞 0362 XXX XX XX</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SSS -->
+<section class="section" id="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Sıkça Sorulan Sorular</div>
+      <h2 class="section-title">Staj SSS</h2>
+      <p class="section-desc">Staj sürecinde en çok sorulan soruların cevaplarını aşağıda bulabilirsiniz.</p>
+    </div>
+    <div style="max-width:800px;margin:0 auto" id="faq-list">
+
+      <div class="faq-item" id="faq-1">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>Staj yabancı bir şirkette yapılabilir mi?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Evet, yurt dışında yazılım geliştirme veya BT departmanına sahip bir şirkette staj yapılabilir. Bu durumda staj başvuru formunun yanı sıra ek belgeler (işyeri bilgileri, departman teyidi) gerekebilir. Ayrıntılı bilgi için staj koordinatörünüzle iletişime geçin.</div>
+      </div>
+
+      <div class="faq-item" id="faq-2">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>Staj ücreti zorunlu mu?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Hayır, staj ücreti zorunlu değildir; ancak birçok şirket gönüllü olarak stajyer ücreti ya da yol/yemek yardımı sunmaktadır. Ücretli veya ücretsiz her iki staj seçeneği de geçerlidir.</div>
+      </div>
+
+      <div class="faq-item" id="faq-3">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>Staj dönemi ara sınav tarihlerine denk gelirse ne yapılır?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Staj dönemi ile sınav tarihleri çakışması durumunda öğrencinin ilgili sınav için izin talebinde bulunması gerekmektedir. Bu tür durumlar için şirketle önceden mutabakat sağlanması tavsiye edilir.</div>
+      </div>
+
+      <div class="faq-item" id="faq-4">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>Uzaktan (remote) staj kabul ediliyor mu?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">2022 yılından itibaren uzaktan staj kabul edilmektedir. Uzaktan stajlarda da aynı belgeler ve değerlendirme kriterleri geçerlidir. İşyerinin çalışma programı ve onaylı izleme yöntemi bölüme bildirilmelidir.</div>
+      </div>
+
+      <div class="faq-item" id="faq-5">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>Staj defteri hangi formatta hazırlanmalıdır?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Staj defteri, bölümün belirlediği standart format kullanılarak her iş günü için doldurulmalıdır. Format bilgisine bölüm web sitesinden veya sekreteryadan ulaşabilirsiniz. Defterler el yazısıyla veya basılı olarak kabul edilmektedir.</div>
+      </div>
+
+      <div class="faq-item" id="faq-6">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>Hangi sektörler staj için geçerli sayılıyor?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Yazılım geliştirme, web/mobil uygulama, siber güvenlik, yapay zeka & veri bilimi, bulut altyapısı, DevOps, oyun geliştirme ve fintech gibi alanlarda staj yapılabilir. İmalat sanayi, perakende gibi sektörlerin BT birimleri de kabul görmektedir.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip" id="cta-section">
+  <div class="container">
+    <h2>Staj Başvurunuzu Yapın</h2>
+    <p>Yaz dönemi staj başvurusu için son tarih 30 Nisan 2026. Hemen başvurun ve kariyerinizi inşa etmeye başlayın.</p>
+    <div class="cta-buttons">
+      <a href="iletisim.html" class="btn btn-primary btn-lg">Staj Koordinatörüne Ulaş</a>
+      <a href="duyurular.html" class="btn btn-white btn-lg">Duyurular</a>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer">
+  <div class="footer-top"><div class="container"><div class="footer-grid">
+    <div class="footer-brand"><a href="index.html" class="footer-logo"><div class="footer-logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z" fill="white"/></svg></div><div><div class="footer-logo-text">Yazılım Mühendisliği</div><div class="footer-logo-sub">Samsun Üniversitesi</div></div></a><p class="footer-brand-desc">MÜDEK akreditasyonlu yazılım mühendisliği eğitimi.</p><div class="footer-social"><a href="#" class="footer-social-link">𝕏</a><a href="#" class="footer-social-link">in</a><a href="#" class="footer-social-link">◎</a></div></div>
+    <div><div class="footer-col-title">Bölüm</div><div class="footer-links"><a href="hakkimizda.html">Hakkımızda</a><a href="kadro.html">Akademik Kadro</a><a href="laboratuvarlar.html">Laboratuvarlar</a><a href="projeler.html">Projeler</a></div></div>
+    <div><div class="footer-col-title">Eğitim</div><div class="footer-links"><a href="mufredat.html">Müfredat</a><a href="staj.html">Staj</a><a href="duyurular.html">Duyurular</a><a href="aday-ogrenci.html">Aday Öğrenci</a></div></div>
+    <div><div class="footer-col-title">Bağlantılar</div><div class="footer-links"><a href="iletisim.html">İletişim</a><a href="https://samsun.edu.tr" target="_blank">Üniversite</a><a href="https://obs.samsun.edu.tr" target="_blank">OBS</a></div></div>
+  </div></div></div>
+  <div class="footer-bottom"><div class="container"><div class="footer-bottom-inner"><div>© 2026 Samsun Üniversitesi Yazılım Mühendisliği Bölümü.</div><div class="footer-bottom-links"><a href="#">Gizlilik</a><a href="iletisim.html">İletişim</a></div></div></div></div>
+</footer>
+<script>
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 10); });
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    item.classList.toggle('open');
+  }
+</script>
+</body>
+</html>

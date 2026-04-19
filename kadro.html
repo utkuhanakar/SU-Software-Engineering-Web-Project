@@ -1,289 +1,324 @@
-﻿<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü akademik kadro ve idari personel bilgileri." />
-  <title>Akademik Kadro — Yazılım Mühendisliği | Samsun ÜÜniversitesi</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .filter-bar { display:flex; gap:var(--space-3); flex-wrap:wrap; margin-bottom:var(--space-10); }
-    .filter-btn {
-      padding: var(--space-2) var(--space-5);
-      border-radius: var(--radius-full);
-      border: 1.5px solid var(--border);
-      font-size: var(--text-sm);
-      font-weight: 600;
-      color: var(--text-secondary);
-      cursor: pointer;
-      transition: var(--transition-fast);
-      background: transparent;
-      font-family: var(--font-body);
-    }
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: white;
-    }
-    .expertise-tag {
-      display:inline-block;
-      background: var(--bg-section);
-      color: var(--text-secondary);
-      font-size: var(--text-xs);
-      padding: 2px 8px;
-      border-radius: var(--radius-full);
-      margin: 2px;
-      transition: var(--transition-fast);
-    }
-    .expertise-tag:hover { background:var(--primary-ultra); color:var(--primary); }
-  </style>
-</head>
-<body>
-
-<div class="top-bar">
-  <div class="top-bar-inner">
-    <div class="top-bar-links">
-      <a href="https://samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7L2 14l10 5 10-5-10-5zm0 7L2 21l10 5 10-5-10-5z"/></svg> Samsun ÜÜniversitesi</a>
-      <a href="https://obs.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg> OBS</a>
-      <a href="https://uzem.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/></svg> UZEM</a>
-      <a href="http://eposta.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> E-Posta</a>
-    </div>
-    <div class="top-bar-right"><span>2025–2026 Akademik Yılı</span></div>
-  </div>
-</div>
-
-<header id="site-header">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" id="logo-link"><div class="nav-logo-text"><div class="nav-logo-sub">Samsun ÜÜniversitesi</div><div class="nav-logo-title">Yazılım Mühendisliği</div></div></a>
-    <nav>
-      <a href="index.html" class="nav-link">Ana Sayfa</a>
-      <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
-      <a href="kadro.html" class="nav-link active">Kadro</a>
-      <a href="mufredat.html" class="nav-link">Müfredat</a>
-      <a href="laboratuvarlar.html" class="nav-link">Laboratuvarlar</a>
-      <a href="duyurular.html" class="nav-link">Duyurular</a>
-      <a href="projeler.html" class="nav-link">Projeler</a>
-      <a href="staj.html" class="nav-link">Staj</a>
-      <a href="aday-ogÖğÖğrenci.html" class="nav-link nav-cta">Aday ÖğÖğÖğrenci</a>
-    </nav>
-  </div>
-</header>
-
-<section class="page-hero">
-  <div class="page-hero-inner">
-    <div class="breadcrumb">
-      <a href="index.html">Ana Sayfa</a>
-      <span class="breadcrumb-sep">›</span>
-      <span class="breadcrumb-current">Akademik Kadro</span>
-    </div>
-    <div class="page-hero-badge"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Akademik Personel</div>
-    <h1>Akademik <span>Kadromuz</span></h1>
-    <p class="page-hero-desc">Deneyimli öğretim üyelerimiz ve araştırmacılarımız, sizi akademik mükemmeliyete ve kariyer başarısına taşıyacak rehberleri olacaktır.</p>
-  </div>
-</section>
-
-<!-- PROFESSORS -->
-<section class="section" id="professors-section">
-  <div class="container">
-    <div class="filter-bar" id="filter-bar">
-      <button class="filter-btn active" id="filter-all">Tümü</button>
-      <button class="filter-btn" id="filter-prof">Profesör</button>
-      <button class="filter-btn" id="filter-assoc">Doçent</button>
-      <button class="filter-btn" id="filter-dr">Dr. Öğr. Üyesi</button>
-      <button class="filter-btn" id="filter-ra">Araştırma Görevlisi</button>
-    </div>
-
-    <div class="section-header" style="text-align:left;margin-bottom:var(--space-8)">
-      <div class="section-label" style="justify-content:flex-start">Profesörler</div>
-      <h2 class="section-title" style="text-align:left">Öğretim Üyeleri</h2>
-    </div>
-
-    <div class="grid-3" id="staff-grid">
-
-      <!-- PROFESÖRLER -->
-      <div class="person-card" id="staff-1">
-        <div class="person-avatar"><div class="person-avatar-initials">HD</div></div>
-        <div class="person-info">
-          <span class="badge badge-dark" style="margin-bottom:var(--space-3)">Profesör</span>
-          <div class="person-name">Prof. Dr. Hüseyin Demir</div>
-          <div class="person-title">Öğretim Üyesi</div>
-          <div class="person-email">huseyin.demir@samsun.edu.tr</div>
-        </div>
-      </div>
-
-      <div class="person-card" id="staff-2">
-        <div class="person-avatar"><div class="person-avatar-initials">ZC</div></div>
-        <div class="person-info">
-          <span class="badge badge-dark" style="margin-bottom:var(--space-3)">Profesör</span>
-          <div class="person-name">Prof. Dr. Zafer Cömert</div>
-          <div class="person-title">Öğretim Üyesi</div>
-          <div class="person-email">zcomert@samsun.edu.tr</div>
-        </div>
-      </div>
-
-      <!-- DOÇENTLER -->
-      <div class="person-card" id="staff-3">
-        <div class="person-avatar"><div class="person-avatar-initials">MT</div></div>
-        <div class="person-info">
-          <span class="badge" style="background:var(--accent-ultra);color:var(--accent);margin-bottom:var(--space-3)">Doçent</span>
-          <div class="person-name">Doç. Dr. Muammer Türkoğlu</div>
-          <div class="person-title">Bölüm Başkanı</div>
-          <div class="person-email">muammer.turkoglu@samsun.edu.tr</div>
-        </div>
-      </div>
-
-      <div class="person-card" id="staff-4">
-        <div class="person-avatar"><div class="person-avatar-initials">AK</div></div>
-        <div class="person-info">
-          <span class="badge" style="background:var(--accent-ultra);color:var(--accent);margin-bottom:var(--space-3)">Doçent</span>
-          <div class="person-name">Doç. Dr. Abdulkadir Karacı</div>
-          <div class="person-title">Öğretim Üyesi</div>
-          <div class="person-email">abdulkadir.karaci@samsun.edu.tr</div>
-        </div>
-      </div>
-
-      <div class="person-card" id="staff-5">
-        <div class="person-avatar"><div class="person-avatar-initials">SÇ</div></div>
-        <div class="person-info">
-          <span class="badge" style="background:var(--accent-ultra);color:var(--accent);margin-bottom:var(--space-3)">Doçent</span>
-          <div class="person-name">Doç. Dr. Selçuk Çakmak</div>
-          <div class="person-title">Öğretim Üyesi</div>
-          <div class="person-email">selcuk.cakmak@samsun.edu.tr</div>
-        </div>
-      </div>
-
-      <!-- DR. ÖĞR. ÜYELERİ -->
-      <div class="person-card" id="staff-6">
-        <div class="person-avatar"><div class="person-avatar-initials">ES</div></div>
-        <div class="person-info">
-          <span class="badge badge-primary" style="margin-bottom:var(--space-3)">Dr. Öğr. Üyesi</span>
-          <div class="person-name">Dr. Öğr. Üyesi Emel Soylu</div>
-          <div class="person-title">Bölüm Başkan Yardımcısı</div>
-          <div class="person-email">emel.soylu@samsun.edu.tr</div>
-        </div>
-      </div>
-
-      <div class="person-card" id="staff-7">
-        <div class="person-avatar"><div class="person-avatar-initials">ÖT</div></div>
-        <div class="person-info">
-          <span class="badge badge-primary" style="margin-bottom:var(--space-3)">Dr. Öğr. Üyesi</span>
-          <div class="person-name">Dr. Öğr. Üyesi Özgür Tonkal</div>
-          <div class="person-title">Bölüm Başkan Yardımcısı</div>
-          <div class="person-email">ozgur.tonkal@samsun.edu.tr</div>
-        </div>
-      </div>
-
-      <div class="person-card" id="staff-8">
-        <div class="person-avatar"><div class="person-avatar-initials">AK</div></div>
-        <div class="person-info">
-          <span class="badge badge-primary" style="margin-bottom:var(--space-3)">Dr. Öğr. Üyesi</span>
-          <div class="person-name">Dr. Öğr. Üyesi Alper Talha Karadeniz</div>
-          <div class="person-title">Öğretim Üyesi</div>
-          <div class="person-email">alper.karadeniz@samsun.edu.tr</div>
-        </div>
-      </div>
-
-      <div class="person-card" id="staff-9">
-        <div class="person-avatar"><div class="person-avatar-initials">NŞ</div></div>
-        <div class="person-info">
-          <span class="badge badge-primary" style="margin-bottom:var(--space-3)">Dr. Öğr. Üyesi</span>
-          <div class="person-name">Dr. Öğr. Üyesi Nurettin Şenyer</div>
-          <div class="person-title">Öğretim Üyesi</div>
-          <div class="person-email">nurettin.senyer@samsun.edu.tr</div>
-        </div>
-      </div>
-
-      <!-- ARAŞTIRMA GÖREVLİLERİ -->
-      <div class="person-card" id="staff-10">
-        <div class="person-avatar"><div class="person-avatar-initials">DK</div></div>
-        <div class="person-info">
-          <span class="badge badge-neutral" style="margin-bottom:var(--space-3)">Arş. Gör.</span>
-          <div class="person-name">Arş. Gör. Deniz Bora Küçük</div>
-          <div class="person-title">Araştırma Görevlisi</div>
-          <div class="person-email">deniz.kucuk@samsun.edu.tr</div>
-        </div>
-      </div>
-
-      <div class="person-card" id="staff-11">
-        <div class="person-avatar"><div class="person-avatar-initials">FA</div></div>
-        <div class="person-info">
-          <span class="badge badge-neutral" style="margin-bottom:var(--space-3)">Arş. Gör.</span>
-          <div class="person-name">Arş. Gör. Ferhat Arat</div>
-          <div class="person-title">Araştırma Görevlisi</div>
-          <div class="person-email">ferhat.arat@samsun.edu.tr</div>
-        </div>
-      </div>
-
-      <div class="person-card" id="staff-12">
-        <div class="person-avatar"><div class="person-avatar-initials">FD</div></div>
-        <div class="person-info">
-          <span class="badge badge-neutral" style="margin-bottom:var(--space-3)">Arş. Gör.</span>
-          <div class="person-name">Arş. Gör. Furkancan Demircan</div>
-          <div class="person-title">Araştırma Görevlisi</div>
-          <div class="person-email">furkancan.demircan@samsun.edu.tr</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- İdari Personel -->
-    <div class="divider"></div>
-    <div class="section-header" style="text-align:left;margin-bottom:var(--space-8)">
-      <div class="section-label" style="justify-content:flex-start">İdari Personel</div>
-      <h2 class="section-title" style="text-align:left">Destek Kadrosu</h2>
-    </div>
-    <div class="grid-3">
-      <div class="person-card" id="admin-1">
-        <div class="person-avatar" style="background:linear-gradient(135deg,var(--accent-dark),#065F46)">
-          <div class="person-avatar-initials" style="background:linear-gradient(135deg,var(--accent),var(--accent-dark))">AK</div>
-        </div>
-        <div class="person-info">
-          <span class="badge badge-accent" style="margin-bottom:var(--space-3)">İdari Personel</span>
-          <div class="person-name">Ali Karanfil</div>
-          <div class="person-title">Bölüm Sekreteri</div>
-          <div class="person-email">ali.karanfil@samsun.edu.tr</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-strip" id="cta-section">
-  <div class="container">
-    <h2>Akademik Kariyer Fırsatları</h2>
-    <p>Bölümümüzde açık pozisyonlar ve araştırma fırsatları için iletişime geçin.</p>
-    <div class="cta-buttons">
-      <a href="iletisim.html" class="btn btn-primary btn-lg">İletişime Geç</a>
-      <a href="projeler.html" class="btn btn-white btn-lg">Araştırma Projeleri</a>
-    </div>
-  </div>
-</section>
-
-<footer id="site-footer">
-  <div class="footer-top"><div class="container"><div class="footer-grid">
-    <div class="footer-brand">
-      <a href="index.html" class="footer-logo" id="footer-logo" style="margin-bottom:var(--space-3);display:block"><div class="nav-logo-text" style="color:white"><div class="nav-logo-sub" style="color:var(--primary-light)">Samsun ÜÜniversitesi</div><div class="nav-logo-title" style="color:white">Yazılım Mühendisliği</div></div></a>
-      <p class="footer-brand-desc">Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü, dünya standartlarında yazılım mühendisleri yetiştirmeyi misyon edinmiş, MÜDEK akreditasyonlu bir bölümdür.</p>
-      <div class="footer-social"><a href="#" class="footer-social-link">𝕏</a><a href="#" class="footer-social-link">in</a><a href="#" class="footer-social-link">◎</a></div>
-    </div>
-    <div><div class="footer-col-title">Bölüm</div><div class="footer-links"><a href="hakkimizda.html">Hakkımızda</a><a href="kadro.html">Akademik Kadro</a><a href="laboratuvarlar.html">Laboratuvarlar</a><a href="projeler.html">Projeler</a></div></div>
-    <div><div class="footer-col-title">Eğitim</div><div class="footer-links"><a href="mufredat.html">Müfredat</a><a href="staj.html">Staj</a><a href="duyurular.html">Duyurular</a><a href="aday-ogÖğÖğrenci.html">Aday ÖğÖğÖğrenci</a></div></div>
-    <div><div class="footer-col-title">Bağlantılar</div><div class="footer-links"><a href="iletisim.html">İletişim</a><a href="https://samsun.edu.tr" target="_blank">Üniversite</a><a href="https://obs.samsun.edu.tr" target="_blank">OBS</a></div></div>
-  </div></div></div>
-  <div class="footer-bottom"><div class="container"><div class="footer-bottom-inner"><div>© 2026 Samsun ÜÜniversitesi Yazılım Mühendisliği Bölümü.</div><div class="footer-bottom-links"><a href="#">Gizlilik</a><a href="iletisim.html">İletişim</a></div></div></div></div>
-</footer>
-<script>
-  const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 10); });
-
-  // Filter buttons (visual only — no JS filtering needed as per constraints)
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
-</script>
-</body>
-</html>
-
-
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Samsun Üniversitesi Yazılım Mühendisliği Bölümü akademik kadro ve idari personel bilgileri." />
+  <title>Akademik Kadro — Yazılım Mühendisliği | Samsun Üniversitesi</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .filter-bar { display:flex; gap:var(--space-3); flex-wrap:wrap; margin-bottom:var(--space-10); }
+    .filter-btn {
+      padding: var(--space-2) var(--space-5);
+      border-radius: var(--radius-full);
+      border: 1.5px solid var(--border);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: var(--transition-fast);
+      background: transparent;
+      font-family: var(--font-body);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+    .expertise-tag {
+      display:inline-block;
+      background: var(--bg-section);
+      color: var(--text-secondary);
+      font-size: var(--text-xs);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      margin: 2px;
+      transition: var(--transition-fast);
+    }
+    .expertise-tag:hover { background:var(--primary-ultra); color:var(--primary); }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-links">
+      <a href="https://samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.89 9L12 4.58 20.11 9 12 13.42 3.89 9z"/></svg> Samsun Üniversitesi</a>
+      <a href="https://obs.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg> OBS</a>
+      <a href="https://uzem.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/></svg> UZEM</a>
+      <a href="http://eposta.samsun.edu.tr" target="_blank"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> E-Posta</a>
+    </div>
+    <div class="top-bar-right"><span>2025–2026 Akademik Yılı</span></div>
+  </div>
+</div>
+
+<header id="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" id="logo-link">
+      <div class="nav-logo-text">
+        <div class="nav-logo-title">Yazılım Mühendisliği</div>
+        <div class="nav-logo-sub">Samsun Üniversitesi</div>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html" class="nav-link">Ana Sayfa</a>
+      <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+      <a href="kadro.html" class="nav-link active">Kadro</a>
+      <a href="mufredat.html" class="nav-link">Müfredat</a>
+      <a href="laboratuvarlar.html" class="nav-link">Laboratuvarlar</a>
+      <a href="duyurular.html" class="nav-link">Duyurular</a>
+      <a href="projeler.html" class="nav-link">Projeler</a>
+      <a href="staj.html" class="nav-link">Staj</a>
+      <a href="aday-ogrenci.html" class="nav-link nav-cta">Aday Öğrenci</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Ana Sayfa</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Akademik Kadro</span>
+    </div>
+    <div class="page-hero-badge">Akademik Kadro</div>
+    <h1>Akademik <span>Kadromuz</span></h1>
+    <p class="page-hero-desc">Deneyimli öğretim üyelerimiz ve araştırmacılarımız, sizi akademik mükemmeliyete ve kariyer başarısına taşıyacak rehberleri olacaktır.</p>
+  </div>
+</section>
+
+<!-- PROFESSORS -->
+<section class="section" id="professors-section">
+  <div class="container">
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-btn active" id="filter-all">Tümü</button>
+      <button class="filter-btn" id="filter-prof">Profesör</button>
+      <button class="filter-btn" id="filter-assoc">Doçent</button>
+      <button class="filter-btn" id="filter-dr">Dr. Öğr. Üyesi</button>
+      <button class="filter-btn" id="filter-ra">Araştırma Görevlisi</button>
+    </div>
+
+    <div class="section-header" style="text-align:left;margin-bottom:var(--space-8)">
+      <div class="section-label" style="justify-content:flex-start">Profesörler</div>
+      <h2 class="section-title" style="text-align:left">Öğretim Üyeleri</h2>
+    </div>
+
+    <div class="grid-3" id="staff-grid">
+
+      <div class="person-card" id="staff-1">
+        <div class="person-avatar">
+          <div class="person-avatar-initials">AY</div>
+        </div>
+        <div class="person-info">
+          <span class="badge badge-dark" style="margin-bottom:var(--space-3)">Profesör</span>
+          <div class="person-name">Prof. Dr. Ahmet Yılmaz</div>
+          <div class="person-title">Bölüm Başkanı</div>
+          <div style="margin: var(--space-3) 0">
+            <span class="expertise-tag">Yapay Zeka</span>
+            <span class="expertise-tag">Makine Öğrenmesi</span>
+            <span class="expertise-tag">Derin Öğrenme</span>
+          </div>
+          <div class="person-email">📧 ahmet.yilmaz@samsun.edu.tr</div>
+        </div>
+      </div>
+
+      <div class="person-card" id="staff-2">
+        <div class="person-avatar">
+          <div class="person-avatar-initials">FK</div>
+        </div>
+        <div class="person-info">
+          <span class="badge badge-dark" style="margin-bottom:var(--space-3)">Profesör</span>
+          <div class="person-name">Prof. Dr. Fatma Kaya</div>
+          <div class="person-title">Öğretim Üyesi</div>
+          <div style="margin: var(--space-3) 0">
+            <span class="expertise-tag">Siber Güvenlik</span>
+            <span class="expertise-tag">Kriptografi</span>
+            <span class="expertise-tag">Ağ Güvenliği</span>
+          </div>
+          <div class="person-email">📧 fatma.kaya@samsun.edu.tr</div>
+        </div>
+      </div>
+
+      <div class="person-card" id="staff-3">
+        <div class="person-avatar">
+          <div class="person-avatar-initials">MÇ</div>
+        </div>
+        <div class="person-info">
+          <span class="badge" style="background:var(--accent-ultra);color:var(--accent);margin-bottom:var(--space-3)">Doçent</span>
+          <div class="person-name">Doç. Dr. Mehmet Çelik</div>
+          <div class="person-title">Öğretim Üyesi</div>
+          <div style="margin: var(--space-3) 0">
+            <span class="expertise-tag">Yazılım Mimarisi</span>
+            <span class="expertise-tag">Mikroservisler</span>
+            <span class="expertise-tag">DevOps</span>
+          </div>
+          <div class="person-email">📧 mehmet.celik@samsun.edu.tr</div>
+        </div>
+      </div>
+
+      <div class="person-card" id="staff-4">
+        <div class="person-avatar">
+          <div class="person-avatar-initials">ZD</div>
+        </div>
+        <div class="person-info">
+          <span class="badge" style="background:var(--accent-ultra);color:var(--accent);margin-bottom:var(--space-3)">Doçent</span>
+          <div class="person-name">Doç. Dr. Zeynep Demir</div>
+          <div class="person-title">Öğretim Üyesi</div>
+          <div style="margin: var(--space-3) 0">
+            <span class="expertise-tag">Veri Bilimi</span>
+            <span class="expertise-tag">Büyük Veri</span>
+            <span class="expertise-tag">NLP</span>
+          </div>
+          <div class="person-email">📧 zeynep.demir@samsun.edu.tr</div>
+        </div>
+      </div>
+
+      <div class="person-card" id="staff-5">
+        <div class="person-avatar">
+          <div class="person-avatar-initials">HA</div>
+        </div>
+        <div class="person-info">
+          <span class="badge badge-primary" style="margin-bottom:var(--space-3)">Dr. Öğr. Üyesi</span>
+          <div class="person-name">Dr. Öğr. Üyesi Hasan Arslan</div>
+          <div class="person-title">Öğretim Üyesi</div>
+          <div style="margin: var(--space-3) 0">
+            <span class="expertise-tag">Web Geliştirme</span>
+            <span class="expertise-tag">React</span>
+            <span class="expertise-tag">Node.js</span>
+          </div>
+          <div class="person-email">📧 hasan.arslan@samsun.edu.tr</div>
+        </div>
+      </div>
+
+      <div class="person-card" id="staff-6">
+        <div class="person-avatar">
+          <div class="person-avatar-initials">EŞ</div>
+        </div>
+        <div class="person-info">
+          <span class="badge badge-primary" style="margin-bottom:var(--space-3)">Dr. Öğr. Üyesi</span>
+          <div class="person-name">Dr. Öğr. Üyesi Elif Şahin</div>
+          <div class="person-title">Öğretim Üyesi</div>
+          <div style="margin: var(--space-3) 0">
+            <span class="expertise-tag">Mobil Uygulama</span>
+            <span class="expertise-tag">iOS</span>
+            <span class="expertise-tag">Android</span>
+          </div>
+          <div class="person-email">📧 elif.sahin@samsun.edu.tr</div>
+        </div>
+      </div>
+
+      <div class="person-card" id="staff-7">
+        <div class="person-avatar">
+          <div class="person-avatar-initials">KÖ</div>
+        </div>
+        <div class="person-info">
+          <span class="badge badge-primary" style="margin-bottom:var(--space-3)">Dr. Öğr. Üyesi</span>
+          <div class="person-name">Dr. Öğr. Üyesi Kemal Öztürk</div>
+          <div class="person-title">Öğretim Üyesi</div>
+          <div style="margin: var(--space-3) 0">
+            <span class="expertise-tag">Gömülü Sistemler</span>
+            <span class="expertise-tag">IoT</span>
+            <span class="expertise-tag">Arduino</span>
+          </div>
+          <div class="person-email">📧 kemal.ozturk@samsun.edu.tr</div>
+        </div>
+      </div>
+
+      <div class="person-card" id="staff-8">
+        <div class="person-avatar" style="background:linear-gradient(135deg,#1e3a5f,#0d2137)">
+          <div class="person-avatar-initials">SA</div>
+        </div>
+        <div class="person-info">
+          <span class="badge badge-neutral" style="margin-bottom:var(--space-3)">Araştırma Görevlisi</span>
+          <div class="person-name">Arş. Gör. Selin Aydın</div>
+          <div class="person-title">Araştırma Görevlisi</div>
+          <div style="margin: var(--space-3) 0">
+            <span class="expertise-tag">Bilgisayarlı Görü</span>
+            <span class="expertise-tag">Python</span>
+          </div>
+          <div class="person-email">📧 selin.aydin@samsun.edu.tr</div>
+        </div>
+      </div>
+
+      <div class="person-card" id="staff-9">
+        <div class="person-avatar" style="background:linear-gradient(135deg,#1e3a5f,#0d2137)">
+          <div class="person-avatar-initials">BT</div>
+        </div>
+        <div class="person-info">
+          <span class="badge badge-neutral" style="margin-bottom:var(--space-3)">Araştırma Görevlisi</span>
+          <div class="person-name">Arş. Gör. Barış Toprak</div>
+          <div class="person-title">Araştırma Görevlisi</div>
+          <div style="margin: var(--space-3) 0">
+            <span class="expertise-tag">Bulut Bilişim</span>
+            <span class="expertise-tag">Docker</span>
+            <span class="expertise-tag">Kubernetes</span>
+          </div>
+          <div class="person-email">📧 baris.toprak@samsun.edu.tr</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- İdari Personel -->
+    <div class="divider"></div>
+    <div class="section-header" style="text-align:left;margin-bottom:var(--space-8)">
+      <div class="section-label" style="justify-content:flex-start">İdari Personel</div>
+      <h2 class="section-title" style="text-align:left">Destek Kadrosu</h2>
+    </div>
+    <div class="grid-3">
+      <div class="person-card" id="admin-1">
+        <div class="person-avatar" style="background:linear-gradient(135deg,var(--accent-dark),#065F46)">
+          <div class="person-avatar-initials" style="background:linear-gradient(135deg,var(--accent),var(--accent-dark))">SK</div>
+        </div>
+        <div class="person-info">
+          <span class="badge badge-accent" style="margin-bottom:var(--space-3)">İdari Personel</span>
+          <div class="person-name">Selda Karga</div>
+          <div class="person-title">Bölüm Sekreteri</div>
+          <div class="person-email">📧 selda.karga@samsun.edu.tr</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip" id="cta-section">
+  <div class="container">
+    <h2>Akademik Kariyer Fırsatları</h2>
+    <p>Bölümümüzde açık pozisyonlar ve araştırma fırsatları için iletişime geçin.</p>
+    <div class="cta-buttons">
+      <a href="iletisim.html" class="btn btn-primary btn-lg">İletişime Geç</a>
+      <a href="projeler.html" class="btn btn-white btn-lg">Araştırma Projeleri</a>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo"><div class="footer-logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z" fill="white"/></svg></div><div><div class="footer-logo-text">Yazılım Mühendisliği</div><div class="footer-logo-sub">Samsun Üniversitesi</div></div></a>
+          <p class="footer-brand-desc">MÜDEK akreditasyonlu yazılım mühendisliği eğitimi.</p>
+          <div class="footer-social"><a href="#" class="footer-social-link">𝕏</a><a href="#" class="footer-social-link">in</a><a href="#" class="footer-social-link">◎</a></div>
+        </div>
+        <div><div class="footer-col-title">Bölüm</div><div class="footer-links"><a href="hakkimizda.html">Hakkımızda</a><a href="kadro.html">Akademik Kadro</a><a href="laboratuvarlar.html">Laboratuvarlar</a><a href="projeler.html">Projeler</a></div></div>
+        <div><div class="footer-col-title">Eğitim</div><div class="footer-links"><a href="mufredat.html">Müfredat</a><a href="staj.html">Staj</a><a href="duyurular.html">Duyurular</a><a href="aday-ogrenci.html">Aday Öğrenci</a></div></div>
+        <div><div class="footer-col-title">Bağlantılar</div><div class="footer-links"><a href="iletisim.html">İletişim</a><a href="https://samsun.edu.tr" target="_blank">Üniversite</a><a href="https://obs.samsun.edu.tr" target="_blank">OBS</a></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container"><div class="footer-bottom-inner"><div>© 2026 Samsun Üniversitesi Yazılım Mühendisliği Bölümü.</div><div class="footer-bottom-links"><a href="#">Gizlilik</a><a href="iletisim.html">İletişim</a></div></div></div></div>
+</footer>
+<script>
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 10); });
+
+  // Filter buttons (visual only — no JS filtering needed as per constraints)
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
