@@ -49,7 +49,7 @@ Google Fonts (Typography)
 ├── aday-ogrenci.html    # Information for Prospective Students
 ├── iletisim.html        # Contact Form & Location Mapping
 ├── style.css            # Centralized Master Stylesheet
-└── assets/              # Logos, Images, and Visual Assets
+├── README.md            # About Repo
 ```
 
 Developer: Utkuhan Akar
