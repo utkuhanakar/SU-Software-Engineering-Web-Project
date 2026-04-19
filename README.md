@@ -4,7 +4,7 @@ A modern, high-performance redesign of the **Samsun University Software Engineer
 
 ## 🚀 Live Demo
 Experience the live site here:  
-[👉 - GitHub Pages]
+[👉 https://utkuhanakar.github.io/SU-Software-Engineering-Web-Project/ - GitHub Pages]
 
 ## 🤖 AI-Collaborative Workflow (Vibe Coding)
 This project was developed using a modern **AI-assisted workflow**. 
